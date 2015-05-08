@@ -1,0 +1,489 @@
+[17-Apr-2015 17:11:27 America/Chicago] PHP Catchable fatal error:  Object of class mysqli could not be converted to string in /home/trademark/public_html/temp/include/Site.class.php on line 308
+[19-Apr-2015 02:02:50 America/Chicago] PHP Fatal error:  Call to undefined function mssql_fetch_array() in /home/trademark/public_html/temp/include/Site.class.php on line 196
+[19-Apr-2015 02:02:59 America/Chicago] PHP Fatal error:  Call to undefined function mssql_fetch_array() in /home/trademark/public_html/temp/include/Site.class.php on line 196
+[19-Apr-2015 13:13:08 America/Chicago] PHP Fatal error:  Call to undefined function mssql_fetch_array() in /home/trademark/public_html/temp/include/Site.class.php on line 133
+[21-Apr-2015 02:25:52 America/Chicago] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'trademar_user200'@'localhost' (using password: YES) in /home/trademark/public_html/temp/include/Site.class.php on line 9
+[21-Apr-2015 02:26:22 America/Chicago] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'trademar_user200'@'localhost' (using password: YES) in /home/trademark/public_html/temp/include/Site.class.php on line 9
+[22-Apr-2015 08:15:16 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/trademark/public_html/temp/include/Site.class.php:235) in /home/trademark/public_html/temp/include/Site.class.php on line 174
+[23-Apr-2015 09:09:19 America/Chicago] PHP Warning:  preg_match(): Unknown modifier 'C' in /home/trademark/public_html/temp/test.php on line 32
+[27-Apr-2015 12:40:09 America/Chicago] PHP Parse error:  syntax error, unexpected ',' in /home/trademark/public_html/temp/include/Site.class.php on line 118
+[27-Apr-2015 12:40:49 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 59
+[27-Apr-2015 12:40:49 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 87
+[27-Apr-2015 12:40:49 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/temp/authorise.php on line 105
+[27-Apr-2015 12:40:49 America/Chicago] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 174
+[27-Apr-2015 12:40:49 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 59
+[27-Apr-2015 12:40:49 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 87
+[27-Apr-2015 12:40:49 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/temp/authorise.php on line 105
+[27-Apr-2015 12:40:49 America/Chicago] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 174
+[27-Apr-2015 12:40:49 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 59
+[27-Apr-2015 12:40:49 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 87
+[27-Apr-2015 12:40:49 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/temp/authorise.php on line 105
+[27-Apr-2015 12:40:49 America/Chicago] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 174
+[27-Apr-2015 12:42:28 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 87
+[27-Apr-2015 12:42:28 America/Chicago] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 174
+[27-Apr-2015 12:42:28 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 87
+[27-Apr-2015 12:42:28 America/Chicago] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 174
+[27-Apr-2015 12:42:28 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 87
+[27-Apr-2015 12:42:28 America/Chicago] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 174
+[27-Apr-2015 12:45:13 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 87
+[27-Apr-2015 12:45:13 America/Chicago] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 174
+[27-Apr-2015 12:45:13 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 87
+[27-Apr-2015 12:45:13 America/Chicago] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 174
+[27-Apr-2015 12:45:13 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 87
+[27-Apr-2015 12:45:13 America/Chicago] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/authorise.php on line 174
+[27-Apr-2015 13:23:21 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/carrier_admin.php on line 171
+[27-Apr-2015 13:23:21 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/carrier_admin.php on line 197
+[29-Apr-2015 13:45:20 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/temp/test.php on line 59
+[29-Apr-2015 13:46:02 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/temp/test.php on line 60
+[29-Apr-2015 13:46:10 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/temp/test.php on line 60
+[01-May-2015 18:04:42 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/trademark/public_html/temp/ihor.php:2) in /home/trademark/public_html/temp/include/initializer.php on line 2
+[01-May-2015 18:05:38 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/trademark/public_html/temp/ihor.php:2) in /home/trademark/public_html/temp/include/initializer.php on line 2
+[01-May-2015 18:07:22 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/trademark/public_html/temp/ihor.php:2) in /home/trademark/public_html/temp/include/initializer.php on line 2
+[01-May-2015 18:08:28 America/Chicago] PHP Fatal error:  Call to undefined function mysql_qw() in /home/trademark/public_html/temp/ihor.php on line 5
+[01-May-2015 18:09:18 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/trademark/public_html/temp/ihor.php:2) in /home/trademark/public_html/temp/include/initializer.php on line 2
+[01-May-2015 18:09:18 America/Chicago] PHP Warning:  require_once(Site.class.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/ihor.php on line 5
+[01-May-2015 18:09:18 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'Site.class.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/ihor.php on line 5
+[01-May-2015 18:10:01 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/trademark/public_html/temp/ihor.php:2) in /home/trademark/public_html/temp/include/initializer.php on line 2
+[01-May-2015 18:10:01 America/Chicago] PHP Warning:  require_once(/include/Site.class.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/ihor.php on line 5
+[01-May-2015 18:10:01 America/Chicago] PHP Fatal error:  require_once(): Failed opening required '/include/Site.class.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/ihor.php on line 5
+[01-May-2015 18:11:04 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/trademark/public_html/temp/ihor.php:2) in /home/trademark/public_html/temp/include/initializer.php on line 2
+[01-May-2015 18:12:06 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/trademark/public_html/temp/ihor.php:2) in /home/trademark/public_html/temp/include/initializer.php on line 2
+[01-May-2015 18:12:40 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/trademark/public_html/temp/ihor.php:2) in /home/trademark/public_html/temp/include/initializer.php on line 2
+[01-May-2015 19:41:47 America/Chicago] PHP Warning:  require_once(/stripe/stripe_integrate.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/include/initializer.php on line 30
+[01-May-2015 19:41:47 America/Chicago] PHP Fatal error:  require_once(): Failed opening required '/stripe/stripe_integrate.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/include/initializer.php on line 30
+[01-May-2015 19:41:51 America/Chicago] PHP Warning:  require_once(/stripe/stripe_integrate.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/include/initializer.php on line 30
+[01-May-2015 19:41:51 America/Chicago] PHP Fatal error:  require_once(): Failed opening required '/stripe/stripe_integrate.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/include/initializer.php on line 30
+[01-May-2015 19:42:22 America/Chicago] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/trademark/public_html/temp/include/Site.class.php on line 7
+[01-May-2015 19:42:40 America/Chicago] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/trademark/public_html/temp/include/Site.class.php on line 7
+[01-May-2015 19:42:47 America/Chicago] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/trademark/public_html/temp/include/Site.class.php on line 7
+[01-May-2015 19:54:19 America/Chicago] PHP Warning:  include(../initializer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 19:54:19 America/Chicago] PHP Warning:  include(../initializer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 19:54:19 America/Chicago] PHP Warning:  include(): Failed opening '../initializer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 19:56:20 America/Chicago] PHP Warning:  include(../initializer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 19:56:20 America/Chicago] PHP Warning:  include(../initializer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 19:56:20 America/Chicago] PHP Warning:  include(): Failed opening '../initializer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 19:56:22 America/Chicago] PHP Warning:  include(../initializer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 19:56:22 America/Chicago] PHP Warning:  include(../initializer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 19:56:22 America/Chicago] PHP Warning:  include(): Failed opening '../initializer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 19:56:24 America/Chicago] PHP Warning:  include(../initializer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 19:56:24 America/Chicago] PHP Warning:  include(../initializer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 19:56:24 America/Chicago] PHP Warning:  include(): Failed opening '../initializer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 19:56:27 America/Chicago] PHP Warning:  include(../initializer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 19:56:27 America/Chicago] PHP Warning:  include(../initializer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 19:56:27 America/Chicago] PHP Warning:  include(): Failed opening '../initializer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 4
+[01-May-2015 20:10:55 America/Chicago] PHP Parse error:  syntax error, unexpected ')' in /home/trademark/public_html/temp/ihor.php on line 22
+[01-May-2015 20:11:15 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 23
+[01-May-2015 20:11:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 23
+[01-May-2015 21:21:48 America/Chicago] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 71
+[01-May-2015 21:59:39 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 46
+[02-May-2015 09:57:26 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home/trademark/public_html/temp/ihor.php on line 19
+[02-May-2015 10:13:45 America/Chicago] PHP Fatal error:  Class 'carrier_stripe' not found in /home/trademark/public_html/temp/ihor.php on line 24
+[02-May-2015 10:22:42 America/Chicago] PHP Fatal error:  Class 'carrier_stripe' not found in /home/trademark/public_html/temp/ihor.php on line 24
+[02-May-2015 10:22:44 America/Chicago] PHP Fatal error:  Class 'carrier_stripe' not found in /home/trademark/public_html/temp/ihor.php on line 24
+[02-May-2015 10:22:47 America/Chicago] PHP Fatal error:  Class 'carrier_stripe' not found in /home/trademark/public_html/temp/ihor.php on line 24
+[02-May-2015 10:25:49 America/Chicago] PHP Fatal error:  Class 'carrier_stripe' not found in /home/trademark/public_html/temp/ihor.php on line 24
+[02-May-2015 10:34:31 America/Chicago] PHP Warning:  Missing argument 3 for carrier_stripe::plan_driver(), called in /home/trademark/public_html/temp/ihor.php on line 24 and defined in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 98
+[02-May-2015 10:34:38 America/Chicago] PHP Warning:  Missing argument 3 for carrier_stripe::plan_driver(), called in /home/trademark/public_html/temp/ihor.php on line 24 and defined in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 98
+[02-May-2015 10:51:28 America/Chicago] PHP Fatal error:  Class 'carrier_stripe' not found in /home/trademark/public_html/temp/ihor.php on line 24
+[02-May-2015 11:17:25 America/Chicago] Stripe Notice: Undefined property of Stripe_Customer instance: subscriptions
+[02-May-2015 11:17:25 America/Chicago] PHP Fatal error:  Call to a member function create() on a non-object in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 150
+[02-May-2015 13:03:33 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 63
+[04-May-2015 11:25:31 America/Chicago] PHP Fatal error:  Class 'Stripe_Customer' not found in /home/trademark/public_html/temp/ihor.php on line 18
+[04-May-2015 11:25:34 America/Chicago] PHP Fatal error:  Class 'Stripe_Customer' not found in /home/trademark/public_html/temp/ihor.php on line 18
+[04-May-2015 12:43:06 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 152
+[04-May-2015 12:43:33 America/Chicago] PHP Parse error:  syntax error, unexpected ';' in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 157
+[04-May-2015 12:47:53 America/Chicago] PHP Fatal error:  Call to a member function retrieve() on a non-object in /home/trademark/public_html/temp/ihor.php on line 22
+[04-May-2015 12:48:54 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Customer cus_6ATaqL0Uk9AZh7 does not have a subscription with ID driver48' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/List.php(32): Stripe_ApiRequestor->request('get', '/v1/customers/c...', NULL)
+#3 /home/trademark/public_html/temp/ihor.php(22): Stripe_List->retrieve('driver48')
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 12:50:26 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Customer cus_6ATaqL0Uk9AZh7 does not have a subscription with ID sub_6AnKvZQOTk0AQr' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/List.php(32): Stripe_ApiRequestor->request('get', '/v1/customers/c...', NULL)
+#3 /home/trademark/public_html/temp/ihor.php(22): Stripe_List->retrieve('sub_6AnKvZQOTk0...')
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 13:06:52 America/Chicago] PHP Fatal error:  Class 'carrier_stripe' not found in /home/trademark/public_html/temp/ihor.php on line 18
+[04-May-2015 13:06:56 America/Chicago] PHP Fatal error:  Class 'carrier_stripe' not found in /home/trademark/public_html/temp/ihor.php on line 18
+[04-May-2015 13:33:23 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Customer cus_6ATaqL0Uk9AZh7 does not have a subscription with ID sub_6BAGrceNDnqCUk' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/List.php(32): Stripe_ApiRequestor->request('get', '/v1/customers/c...', NULL)
+#3 /home/trademark/public_html/temp/ihor.php(49): Stripe_List->retrieve('sub_6BAGrceNDnq...')
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 13:40:57 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Customer cus_6ATaqL0Uk9AZh7 does not have a subscription with ID sub_6BAkPf6hgyjqspk' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/List.php(32): Stripe_ApiRequestor->request('get', '/v1/customers/c...', NULL)
+#3 /home/trademark/public_html/temp/ihor.php(50): Stripe_List->retrieve('sub_6BAkPf6hgyj...')
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 13:46:22 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Customer cus_6ATaqL0Uk9AZh7 does not have a subscription with ID sub_6BAtYGXtrOy0RUP' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/List.php(32): Stripe_ApiRequestor->request('get', '/v1/customers/c...', NULL)
+#3 /home/trademark/public_html/temp/ihor.php(48): Stripe_List->retrieve('sub_6BAtYGXtrOy...')
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 13:47:52 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Customer cus_6ATaqL0Uk9AZh7 does not have a subscription with ID sub_6BArmNcE3Cfu9P' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/List.php(32): Stripe_ApiRequestor->request('get', '/v1/customers/c...', NULL)
+#3 /home/trademark/public_html/temp/ihor.php(49): Stripe_List->retrieve('sub_6BArmNcE3Cf...')
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 13:48:08 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Customer cus_6ATaqL0Uk9AZh7 does not have a subscription with ID sub_6BAtYGXtrOy0RU' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/List.php(32): Stripe_ApiRequestor->request('get', '/v1/customers/c...', NULL)
+#3 /home/trademark/public_html/temp/ihor.php(48): Stripe_List->retrieve('sub_6BAtYGXtrOy...')
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 13:49:03 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'No such plan: driver48' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(30): Stripe_ApiRequestor->request('get', '/v1/plans/drive...', Array)
+#3 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#4 /home/trademark/public_html/temp/include/stripe/Stripe/Plan.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Plan', 'driver48', NULL)
+#5 /home/trademark/public_html/temp/ihor.php(50): Stripe_Plan::retrieve('driver48')
+#6 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 13:59:08 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'No such plan: driver48' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(30): Stripe_ApiRequestor->request('get', '/v1/plans/drive...', Array)
+#3 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#4 /home/trademark/public_html/temp/include/stripe/Stripe/Plan.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Plan', 'driver48', NULL)
+#5 /home/trademark/public_html/temp/ihor.php(50): Stripe_Plan::retrieve('driver48')
+#6 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 14:11:33 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'No such plan: driver48' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(30): Stripe_ApiRequestor->request('get', '/v1/plans/drive...', Array)
+#3 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#4 /home/trademark/public_html/temp/include/stripe/Stripe/Plan.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Plan', 'driver48', NULL)
+#5 /home/trademark/public_html/temp/ihor.php(50): Stripe_Plan::retrieve('driver48')
+#6 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 14:13:50 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Customer cus_6ATaqL0Uk9AZh7 does not have a subscription with ID sub_6BBKBPyZ2HEty0' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/List.php(32): Stripe_ApiRequestor->request('get', '/v1/customers/c...', NULL)
+#3 /home/trademark/public_html/temp/ihor.php(48): Stripe_List->retrieve('sub_6BBKBPyZ2HE...')
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 14:21:32 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'No such plan: driver48' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(30): Stripe_ApiRequestor->request('get', '/v1/plans/drive...', Array)
+#3 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#4 /home/trademark/public_html/temp/include/stripe/Stripe/Plan.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Plan', 'driver48', NULL)
+#5 /home/trademark/public_html/temp/ihor.php(51): Stripe_Plan::retrieve('driver48')
+#6 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 14:21:52 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'No such plan: driver48' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(30): Stripe_ApiRequestor->request('get', '/v1/plans/drive...', Array)
+#3 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#4 /home/trademark/public_html/temp/include/stripe/Stripe/Plan.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Plan', 'driver48', NULL)
+#5 /home/trademark/public_html/temp/ihor.php(51): Stripe_Plan::retrieve('driver48')
+#6 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 14:21:55 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'No such plan: driver48' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(30): Stripe_ApiRequestor->request('get', '/v1/plans/drive...', Array)
+#3 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#4 /home/trademark/public_html/temp/include/stripe/Stripe/Plan.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Plan', 'driver48', NULL)
+#5 /home/trademark/public_html/temp/ihor.php(51): Stripe_Plan::retrieve('driver48')
+#6 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 14:25:05 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'No such plan: driver48' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(30): Stripe_ApiRequestor->request('get', '/v1/plans/drive...', Array)
+#3 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#4 /home/trademark/public_html/temp/include/stripe/Stripe/Plan.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Plan', 'driver48', NULL)
+#5 /home/trademark/public_html/temp/ihor.php(51): Stripe_Plan::retrieve('driver48')
+#6 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 14:25:28 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'No such plan: driver48' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(30): Stripe_ApiRequestor->request('get', '/v1/plans/drive...', Array)
+#3 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#4 /home/trademark/public_html/temp/include/stripe/Stripe/Plan.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Plan', 'driver48', NULL)
+#5 /home/trademark/public_html/temp/ihor.php(51): Stripe_Plan::retrieve('driver48')
+#6 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 14:25:44 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Customer cus_6ATaqL0Uk9AZh7 does not have a subscription with ID sub_6BBVUBxQsvqNZx' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/List.php(32): Stripe_ApiRequestor->request('get', '/v1/customers/c...', NULL)
+#3 /home/trademark/public_html/temp/ihor.php(48): Stripe_List->retrieve('sub_6BBVUBxQsvq...')
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 15:43:21 America/Chicago] PHP Warning:  include(/home/trademark/public_html/temp/include/../templates/left-menu.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/carrier_manager.php on line 10
+[04-May-2015 15:43:21 America/Chicago] PHP Warning:  include(): Failed opening '/home/trademark/public_html/temp/include/../templates/left-menu.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/carrier_manager.php on line 10
+[04-May-2015 16:01:41 America/Chicago] PHP Fatal error:  Call to undefined function payment_info() in /home/trademark/public_html/temp/carrier_manager.php on line 27
+[04-May-2015 16:32:06 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/trademark/public_html/temp/carrier_manager.php on line 27
+[04-May-2015 18:15:10 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Unrecognized request URL (GET: /v1/customers/cus_6AO6NF6eZVH8Ln/sources/).  Please see https://stripe.com/docs or we can help at https://support.stripe.com/.' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/List.php(32): Stripe_ApiRequestor->request('get', '/v1/customers/c...', NULL)
+#3 /home/trademark/public_html/temp/cards_form.php(28): Stripe_List->retrieve(NULL)
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 18:15:19 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Unrecognized request URL (GET: /v1/customers/cus_6AO6NF6eZVH8Ln/sources/).  Please see https://stripe.com/docs or we can help at https://support.stripe.com/.' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/List.php(32): Stripe_ApiRequestor->request('get', '/v1/customers/c...', NULL)
+#3 /home/trademark/public_html/temp/cards_form.php(28): Stripe_List->retrieve(NULL)
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 18:15:42 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Unrecognized request URL (GET: /v1/customers/cus_6AO6NF6eZVH8Ln/sources/).  Please see https://stripe.com/docs or we can help at https://support.stripe.com/.' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/List.php(32): Stripe_ApiRequestor->request('get', '/v1/customers/c...', NULL)
+#3 /home/trademark/public_html/temp/cards_form.php(28): Stripe_List->retrieve(NULL)
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[04-May-2015 18:24:24 America/Chicago] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/trademark/public_html/temp/cards_form.php on line 103
+[04-May-2015 18:24:24 America/Chicago] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/trademark/public_html/temp/cards_form.php on line 103
+[04-May-2015 18:33:27 America/Chicago] PHP Parse error:  syntax error, unexpected ''<option selected value="'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/trademark/public_html/temp/cards_form.php on line 86
+[04-May-2015 18:33:27 America/Chicago] PHP Parse error:  syntax error, unexpected ''<option selected value="'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/trademark/public_html/temp/cards_form.php on line 86
+[04-May-2015 18:34:14 America/Chicago] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/trademark/public_html/temp/cards_form.php on line 106
+[04-May-2015 18:34:14 America/Chicago] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/trademark/public_html/temp/cards_form.php on line 106
+[04-May-2015 18:34:35 America/Chicago] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/trademark/public_html/temp/cards_form.php on line 106
+[04-May-2015 18:35:09 America/Chicago] Stripe Notice: Undefined property of Stripe_Customer instance: exp_month
+[04-May-2015 18:35:09 America/Chicago] Stripe Notice: Undefined property of Stripe_Customer instance: exp_year
+[04-May-2015 18:36:43 America/Chicago] PHP Parse error:  syntax error, unexpected '<' in /home/trademark/public_html/temp/cards_form.php on line 103
+[04-May-2015 18:36:43 America/Chicago] PHP Parse error:  syntax error, unexpected '<' in /home/trademark/public_html/temp/cards_form.php on line 103
+[04-May-2015 18:37:42 America/Chicago] Stripe Notice: Undefined property of Stripe_Customer instance: exp_month
+[04-May-2015 18:37:42 America/Chicago] Stripe Notice: Undefined property of Stripe_Customer instance: exp_year
+[04-May-2015 18:37:51 America/Chicago] Stripe Notice: Undefined property of Stripe_Customer instance: exp_month
+[04-May-2015 18:37:51 America/Chicago] Stripe Notice: Undefined property of Stripe_Customer instance: exp_year
+[04-May-2015 18:40:38 America/Chicago] Stripe Notice: Undefined property of Stripe_Customer instance: exp_month
+[04-May-2015 18:40:38 America/Chicago] Stripe Notice: Undefined property of Stripe_Customer instance: exp_year
+[04-May-2015 18:52:36 America/Chicago] PHP Fatal error:  Call to undefined function strtoint() in /home/trademark/public_html/temp/cards_form.php on line 86
+[04-May-2015 18:54:16 America/Chicago] PHP Fatal error:  Call to undefined function strtoint() in /home/trademark/public_html/temp/cards_form.php on line 86
+[04-May-2015 20:05:12 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/trademark/public_html/temp/templates/header.php:10) in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 237
+[04-May-2015 20:05:32 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/trademark/public_html/temp/templates/header.php:10) in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 237
+[04-May-2015 20:06:14 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/trademark/public_html/temp/templates/header.php:10) in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 237
+[06-May-2015 04:06:22 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/trademark/public_html/temp/carrier_manager.php on line 53
+[06-May-2015 08:49:20 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 15
+[06-May-2015 08:49:25 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 15
+[06-May-2015 08:49:44 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 15
+[06-May-2015 08:52:10 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 15
+[06-May-2015 08:52:59 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 15
+[06-May-2015 08:54:43 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 15
+[06-May-2015 08:56:05 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 15
+[06-May-2015 09:00:17 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 19
+[06-May-2015 09:00:57 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 19
+[06-May-2015 09:01:44 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 19
+[06-May-2015 09:31:13 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/trademark/public_html/temp/cards_form.php on line 121
+[06-May-2015 12:35:52 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Could not determine which URL to request: Stripe_Customer instance has invalid ID: ' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php:94
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(24): Stripe_ApiResource->instanceUrl()
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/Customer.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Customer', NULL, NULL)
+#3 /home/trademark/public_html/temp/carrier_manager.php(37): Stripe_Customer::retrieve(NULL)
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php on line 94
+[06-May-2015 12:36:12 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Could not determine which URL to request: Stripe_Customer instance has invalid ID: ' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php:94
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(24): Stripe_ApiResource->instanceUrl()
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/Customer.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Customer', NULL, NULL)
+#3 /home/trademark/public_html/temp/carrier_manager.php(37): Stripe_Customer::retrieve(NULL)
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php on line 94
+[06-May-2015 12:43:51 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Could not determine which URL to request: Stripe_Customer instance has invalid ID: ' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php:94
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(24): Stripe_ApiResource->instanceUrl()
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/Customer.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Customer', NULL, NULL)
+#3 /home/trademark/public_html/temp/carrier_manager.php(37): Stripe_Customer::retrieve(NULL)
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php on line 94
+[06-May-2015 15:38:18 America/Chicago] PHP Parse error:  syntax error, unexpected ')' in /home/trademark/public_html/temp/cards_form.php on line 40
+[06-May-2015 15:38:42 America/Chicago] PHP Parse error:  syntax error, unexpected 'unset' (T_UNSET) in /home/trademark/public_html/temp/cards_form.php on line 42
+[06-May-2015 15:49:07 America/Chicago] PHP Parse error:  syntax error, unexpected 'unset' (T_UNSET) in /home/trademark/public_html/temp/cards_form.php on line 43
+[06-May-2015 15:49:35 America/Chicago] PHP Warning:  Creating default object from empty value in /home/trademark/public_html/temp/cards_form.php on line 39
+[06-May-2015 15:52:52 America/Chicago] PHP Warning:  Creating default object from empty value in /home/trademark/public_html/temp/cards_form.php on line 40
+[06-May-2015 15:53:29 America/Chicago] PHP Warning:  Creating default object from empty value in /home/trademark/public_html/temp/cards_form.php on line 40
+[06-May-2015 15:54:38 America/Chicago] PHP Warning:  Creating default object from empty value in /home/trademark/public_html/temp/cards_form.php on line 43
+[06-May-2015 15:56:08 America/Chicago] PHP Warning:  Creating default object from empty value in /home/trademark/public_html/temp/cards_form.php on line 42
+[06-May-2015 15:56:08 America/Chicago] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/trademark/public_html/temp/cards_form.php on line 85
+[06-May-2015 15:58:20 America/Chicago] PHP Warning:  Creating default object from empty value in /home/trademark/public_html/temp/cards_form.php on line 43
+[06-May-2015 16:00:34 America/Chicago] PHP Warning:  Creating default object from empty value in /home/trademark/public_html/temp/cards_form.php on line 42
+[06-May-2015 16:01:28 America/Chicago] PHP Warning:  Creating default object from empty value in /home/trademark/public_html/temp/cards_form.php on line 40
+[06-May-2015 16:02:17 America/Chicago] PHP Warning:  Creating default object from empty value in /home/trademark/public_html/temp/cards_form.php on line 43
+[07-May-2015 00:46:31 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Could not determine which URL to request: Stripe_Customer instance has invalid ID: ' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php:94
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(24): Stripe_ApiResource->instanceUrl()
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/Customer.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Customer', NULL, NULL)
+#3 /home/trademark/public_html/temp/carrier_manager.php(37): Stripe_Customer::retrieve(NULL)
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php on line 94
+[07-May-2015 00:47:00 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Could not determine which URL to request: Stripe_Customer instance has invalid ID: ' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php:94
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(24): Stripe_ApiResource->instanceUrl()
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/Customer.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Customer', NULL, NULL)
+#3 /home/trademark/public_html/temp/carrier_manager.php(37): Stripe_Customer::retrieve(NULL)
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php on line 94
+[07-May-2015 00:47:05 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Could not determine which URL to request: Stripe_Customer instance has invalid ID: ' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php:94
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(24): Stripe_ApiResource->instanceUrl()
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/Customer.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Customer', NULL, NULL)
+#3 /home/trademark/public_html/temp/carrier_manager.php(37): Stripe_Customer::retrieve(NULL)
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php on line 94
+[07-May-2015 00:50:07 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Could not determine which URL to request: Stripe_Customer instance has invalid ID: ' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php:94
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(24): Stripe_ApiResource->instanceUrl()
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/Customer.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Customer', NULL, NULL)
+#3 /home/trademark/public_html/temp/carrier_manager.php(37): Stripe_Customer::retrieve(NULL)
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php on line 94
+[07-May-2015 00:51:33 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Could not determine which URL to request: Stripe_Customer instance has invalid ID: ' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php:94
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(24): Stripe_ApiResource->instanceUrl()
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/Customer.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Customer', NULL, NULL)
+#3 /home/trademark/public_html/temp/carrier_manager.php(37): Stripe_Customer::retrieve(NULL)
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php on line 94
+[07-May-2015 00:54:18 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Could not determine which URL to request: Stripe_Customer instance has invalid ID: ' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php:94
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(24): Stripe_ApiResource->instanceUrl()
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/Customer.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Customer', NULL, NULL)
+#3 /home/trademark/public_html/temp/cards_form.php(17): Stripe_Customer::retrieve(NULL)
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php on line 94
+[07-May-2015 00:56:58 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'Could not determine which URL to request: Stripe_Customer instance has invalid ID: ' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php:94
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(24): Stripe_ApiResource->instanceUrl()
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(14): Stripe_ApiResource->refresh()
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/Customer.php(14): Stripe_ApiResource::_scopedRetrieve('Stripe_Customer', NULL, NULL)
+#3 /home/trademark/public_html/temp/cards_form.php(17): Stripe_Customer::retrieve(NULL)
+#4 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php on line 94
+[07-May-2015 01:01:14 America/Chicago] PHP Fatal error:  Class 'carrier_stripe' not found in /home/trademark/public_html/temp/carrier_manager.php on line 36
+[07-May-2015 02:03:43 America/Chicago] PHP Fatal error:  Class 'Stripe_Customer' not found in /home/trademark/public_html/temp/ihor.php on line 20
+[07-May-2015 02:04:29 America/Chicago] PHP Fatal error:  Uncaught exception 'Stripe_InvalidRequestError' with message 'No such customer: cus_6C6FYVKLRY86wu' in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php:147
+Stack trace:
+#0 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(268): Stripe_ApiRequestor->handleApiError('{\n  "error": {\n...', 404, Array)
+#1 /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php(109): Stripe_ApiRequestor->_interpretResponse('{\n  "error": {\n...', 404)
+#2 /home/trademark/public_html/temp/include/stripe/Stripe/ApiResource.php(170): Stripe_ApiRequestor->request('delete', '/v1/customers/c...', NULL)
+#3 /home/trademark/public_html/temp/include/stripe/Stripe/Customer.php(58): Stripe_ApiResource->_scopedDelete('Stripe_Customer', NULL)
+#4 /home/trademark/public_html/temp/ihor.php(24): Stripe_Customer->delete()
+#5 {main}
+  thrown in /home/trademark/public_html/temp/include/stripe/Stripe/ApiRequestor.php on line 147
+[07-May-2015 02:44:10 America/Chicago] PHP Fatal error:  Cannot use object of type stdClass as array in /home/trademark/public_html/temp/cards_form.php on line 99
+[07-May-2015 02:59:06 America/Chicago] PHP Fatal error:  Cannot use object of type stdClass as array in /home/trademark/public_html/temp/cards_form.php on line 153
+[07-May-2015 03:00:48 America/Chicago] PHP Fatal error:  Cannot use object of type stdClass as array in /home/trademark/public_html/temp/cards_form.php on line 153
+[07-May-2015 03:05:52 America/Chicago] Stripe Notice: Undefined property of Stripe_AttachedObject instance: country
+[07-May-2015 03:05:52 America/Chicago] Stripe Notice: Undefined property of Stripe_AttachedObject instance: country
+[07-May-2015 03:09:52 America/Chicago] Stripe Notice: Undefined property of Stripe_AttachedObject instance: country
+[07-May-2015 03:09:52 America/Chicago] Stripe Notice: Undefined property of Stripe_AttachedObject instance: country
+[07-May-2015 03:55:06 America/Chicago] PHP Parse error:  syntax error, unexpected '$res' (T_VARIABLE), expecting '(' in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 447
+[07-May-2015 03:55:22 America/Chicago] PHP Parse error:  syntax error, unexpected '$res' (T_VARIABLE), expecting '(' in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 447
+[07-May-2015 03:55:45 America/Chicago] PHP Warning:  include(INC_PATH/templates/header.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/dashboard.php on line 5
+[07-May-2015 03:55:45 America/Chicago] PHP Warning:  include(INC_PATH/templates/header.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/dashboard.php on line 5
+[07-May-2015 03:55:45 America/Chicago] PHP Warning:  include(): Failed opening 'INC_PATH/templates/header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/dashboard.php on line 5
+[07-May-2015 03:55:45 America/Chicago] PHP Warning:  include(INC_PATH/templates/footer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/dashboard.php on line 120
+[07-May-2015 03:55:45 America/Chicago] PHP Warning:  include(INC_PATH/templates/footer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/dashboard.php on line 120
+[07-May-2015 03:55:45 America/Chicago] PHP Warning:  include(): Failed opening 'INC_PATH/templates/footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/dashboard.php on line 120
+[07-May-2015 03:55:59 America/Chicago] PHP Parse error:  syntax error, unexpected '$res' (T_VARIABLE), expecting '(' in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 447
+[07-May-2015 03:56:37 America/Chicago] PHP Parse error:  syntax error, unexpected '$res' (T_VARIABLE), expecting '(' in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 447
+[07-May-2015 03:56:44 America/Chicago] PHP Warning:  include(INC_PATH/templates/header.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/dashboard.php on line 6
+[07-May-2015 03:56:44 America/Chicago] PHP Warning:  include(INC_PATH/templates/header.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/dashboard.php on line 6
+[07-May-2015 03:56:44 America/Chicago] PHP Warning:  include(): Failed opening 'INC_PATH/templates/header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/dashboard.php on line 6
+[07-May-2015 03:56:44 America/Chicago] PHP Warning:  include(INC_PATH/templates/footer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/dashboard.php on line 121
+[07-May-2015 03:56:44 America/Chicago] PHP Warning:  include(INC_PATH/templates/footer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/dashboard.php on line 121
+[07-May-2015 03:56:44 America/Chicago] PHP Warning:  include(): Failed opening 'INC_PATH/templates/footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/dashboard.php on line 121
+[07-May-2015 03:57:16 America/Chicago] PHP Warning:  include(/home/trademark/public_html/temp/../templates/header.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/dashboard.php on line 7
+[07-May-2015 03:57:16 America/Chicago] PHP Warning:  include(): Failed opening '/home/trademark/public_html/temp/../templates/header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/dashboard.php on line 7
+[07-May-2015 03:57:16 America/Chicago] PHP Warning:  include(/home/trademark/public_html/temp/../templates/footer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/dashboard.php on line 122
+[07-May-2015 03:57:16 America/Chicago] PHP Warning:  include(): Failed opening '/home/trademark/public_html/temp/../templates/footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/dashboard.php on line 122
+[07-May-2015 03:57:46 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 03:59:06 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 03:59:41 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 04:00:42 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 04:03:32 America/Chicago] PHP Parse error:  syntax error, unexpected ';', expecting '(' in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 446
+[07-May-2015 04:03:53 America/Chicago] PHP Parse error:  syntax error, unexpected ';', expecting '(' in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 446
+[07-May-2015 04:04:25 America/Chicago] PHP Parse error:  syntax error, unexpected '$res' (T_VARIABLE) in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 465
+[07-May-2015 04:04:28 America/Chicago] PHP Parse error:  syntax error, unexpected '$res' (T_VARIABLE) in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 465
+[07-May-2015 04:06:20 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 04:06:26 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 04:07:34 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 04:16:21 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 04:17:42 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 04:17:57 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 04:18:27 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 04:18:28 America/Chicago] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 455
+[07-May-2015 04:31:47 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 28
+[07-May-2015 04:31:51 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 28
+[07-May-2015 04:32:22 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 28
+[07-May-2015 04:32:56 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/ihor.php on line 28
+[07-May-2015 04:35:04 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 04:35:19 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 04:42:20 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 04:43:29 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 08:16:21 America/Chicago] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN), expecting catch (T_CATCH) in /home/trademark/public_html/temp/include/stripe/stripe_integrate.php on line 66
+[07-May-2015 08:18:52 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 08:19:53 America/Chicago] PHP Fatal error:  Call to a member function showErrorReport() on a non-object in /home/trademark/public_html/temp/templates/footer.php on line 793
+[07-May-2015 09:09:46 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/trademark/public_html/temp/templates/header.php:10) in /home/trademark/public_html/temp/carrier_admin.php on line 7
+[07-May-2015 09:12:22 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/trademark/public_html/temp/templates/header.php:10) in /home/trademark/public_html/temp/carrier_admin.php on line 7
+[07-May-2015 09:15:02 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/trademark/public_html/temp/templates/header.php:10) in /home/trademark/public_html/temp/carrier_admin.php on line 7
+[07-May-2015 09:16:32 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/trademark/public_html/temp/templates/header.php:10) in /home/trademark/public_html/temp/include/Site.class.php on line 275
+[07-May-2015 09:27:40 America/Chicago] PHP Warning:  include(/temp//templates/header.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/trial_and.php on line 4
+[07-May-2015 09:27:40 America/Chicago] PHP Warning:  include(): Failed opening '/temp//templates/header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/trial_and.php on line 4
+[07-May-2015 09:27:40 America/Chicago] PHP Warning:  include(/temp//templates/left-menu.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/trial_and.php on line 10
+[07-May-2015 09:27:40 America/Chicago] PHP Warning:  include(): Failed opening '/temp//templates/left-menu.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/trial_and.php on line 10
+[07-May-2015 09:27:40 America/Chicago] PHP Warning:  include(/temp//templates/footer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/trial_and.php on line 24
+[07-May-2015 09:27:40 America/Chicago] PHP Warning:  include(): Failed opening '/temp//templates/footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/trial_and.php on line 24
+[07-May-2015 09:28:57 America/Chicago] PHP Parse error:  syntax error, unexpected '.' in /home/trademark/public_html/temp/trial_and.php on line 16
+[07-May-2015 10:04:10 America/Chicago] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/trademark/public_html/temp/dashboard.php on line 145
+[07-May-2015 10:06:37 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/trademark/public_html/temp/dashboard.php on line 145
+[07-May-2015 11:30:50 America/Chicago] PHP Warning:  include(INC_PATH/templates/header.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/index.php on line 3
+[07-May-2015 11:30:50 America/Chicago] PHP Warning:  include(INC_PATH/templates/header.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/index.php on line 3
+[07-May-2015 11:30:50 America/Chicago] PHP Warning:  include(): Failed opening 'INC_PATH/templates/header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/index.php on line 3
+[07-May-2015 11:30:50 America/Chicago] PHP Warning:  include(INC_PATH/templates/footer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/index.php on line 90
+[07-May-2015 11:30:50 America/Chicago] PHP Warning:  include(INC_PATH/templates/footer.php): failed to open stream: No such file or directory in /home/trademark/public_html/temp/index.php on line 90
+[07-May-2015 11:30:50 America/Chicago] PHP Warning:  include(): Failed opening 'INC_PATH/templates/footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/trademark/public_html/temp/index.php on line 90
+[07-May-2015 11:30:59 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/trademark/public_html/temp/include/initializer.php:2) in /home/trademark/public_html/temp/include/initializer.php on line 3
