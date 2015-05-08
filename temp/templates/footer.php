@@ -830,8 +830,8 @@
                 <p class="error"></p>
                 <input type="hidden" name="key" value="<?= $_GET['key'] ?>"/>
                 <input type="hidden" name="action" value="setuppasswd"/>
-                <input type="hidden" name="backurl" value="<?= SCRIPT_PATH_ROOT ?><?=($_GET['drv'] != 'Y')?'carrier_admin.php':''?>"/>
-                <?=($_GET['drv'] == 'Y')?'<input type="hidden" name="is_driver" value="Y"/>':''?>
+                <input type="hidden" name="backurl" value="<?= SCRIPT_PATH_ROOT ?><?=($_GET['is_driver'] != 'Y')?'carrier_admin.php':''?>"/>
+                <?=($_GET['is_driver'] == 'Y')?'<input type="hidden" name="is_driver" value="Y"/>':''?>
                 <table>
                     <tr>
                         <td>password :</td>

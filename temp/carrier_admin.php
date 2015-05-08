@@ -13,103 +13,103 @@ if($_SESSION['type'] == "carrier" || $_SESSION['type'] == "dispatch"):?>
     <div class="carrier_admin_wrapper">
         <div class="title">Site administration</div> 
         <?php if($_SESSION['type'] == "carrier"):?>
-			<!-- block-left -->
-			<?php include(INC_PATH."/templates/left-menu.php");?>
+            <!-- block-left -->
+            <?php include(INC_PATH."/templates/left-menu.php");?>
 
         <?php endif?>
         <div class="admin_right <?=($_SESSION['type'] == "dispatch")?' admin_right2':''?>">
-        	<?if($_SESSION['type'] == "carrier"):?>
-            <div class="blueline-container">
-                <span class="title1">Create new users</span>
-                <form id="car_add" method="POST" action="<?=SCRIPT_PATH_ROOT?>include/ajax/carrier_admin.php" autocomplete="off">
-                    <input type="hidden" name="action" value="add_users">
-                    <input type="hidden" name="backurl" value="<?=SCRIPT_PATH_ROOT?>carrier_admin.php">
-                    <table class="add_users">
-                        <tr>
-                            <td>
-                                <input class="first" type="text" name="first[]" value="<?=($_GET['first'][0])?$_GET['first'][0]:''?>" placeholder="First name">
-                            </td>
-                            <td>
-                                <input class="last" type="text" name="last[]" value="<?=($_GET['last'][0])?$_GET['last'][0]:''?>" placeholder="Last name">
-                            </td>
-                            <td>
-                                <input class="email" type="text" name="email[]" value="<?=($_GET['email'][0])?$_GET['email'][0]:''?>" placeholder="Email address">
-                            </td>
-                            <td>
-                                <select class="type" name="type[]" placeholder="User type">
-                                    <option value="0" <?=($_GET['type'][0] == 0)?'selected':''?>>User type</option>
-                                    <?php if($_SESSION['type'] == "carrier"):?>
-                                        <option value="dispatch" <?=($_GET['type'][0] == "dispatch")?'selected':''?>>Dispatch</option>
-                                    <?php endif?>
-                                    <option value="driver"<?=($_GET['type'][0] == "driver")?'selected':''?>>Driver</option>
-                                </select>
-                            </td>
-                            <td>
-                                <?=($_GET['error'][0])?$_GET['error'][0]:''?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" name="first[]" value="<?=($_GET['first'][1])?$_GET['first'][1]:''?>" placeholder="First name">
-                            </td>
-                            <td>
-                                <input type="text" name="last[]" value="<?=($_GET['last'][1])?$_GET['last'][1]:''?>" placeholder="Last name">
-                            </td>
-                            <td>
-                                <input type="text" name="email[]" value="<?=($_GET['email'][1])?$_GET['email'][1]:''?>" placeholder="Email address">
-                            </td>
-                            <td>
-                                <select name="type[]" placeholder="User type">
-                                    <option value="0" <?=($_GET['type'][1] == 0)?'selected':''?>>User type</option>
-                                    <?php if($_SESSION['type'] == "carrier"):?>
-                                        <option value="dispatch" <?=($_GET['type'][1] == "dispatch")?'selected':''?>>Dispatch</option>
-                                    <?php endif?>
-                                    <option value="driver"<?=($_GET['type'][1] == "driver")?'selected':''?>>Driver</option>
-                                </select>
-                            </td>
-                            <td>
-                                <?=($_GET['error'][1])?$_GET['error'][1]:''?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" name="first[]" value="<?=($_GET['first'][2])?$_GET['first'][2]:''?>" placeholder="First name">
-                            </td>
-                            <td>
-                                <input type="text" name="last[]" value="<?=($_GET['last'][2])?$_GET['last'][2]:''?>" placeholder="Last name">
-                            </td>
-                            <td>
-                                <input type="text" name="email[]" value="<?=($_GET['email'][2])?$_GET['email'][2]:''?>" placeholder="Email address">
-                            </td>
-                            <td>
-                                <select name="type[]" placeholder="User type">
-                                    <option value="0" <?=($_GET['type'][2] == 0)?'selected':''?>>User type</option>
-                                    <?php if($_SESSION['type'] == "carrier"):?>
-                                        <option value="dispatch" <?=($_GET['type'][2] == "dispatch")?'selected':''?>>Dispatch</option>
-                                    <?php endif?>
-                                    <option value="driver"<?=($_GET['type'][2] == "driver")?'selected':''?>>Driver</option>
-                                </select>
-                            </td>
-                            <td>
-                                <?=($_GET['error'][2])?$_GET['error'][2]:''?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <a class="button js-submit block-right" data-formid="car_add">Create users</a>
-                            </td>
-                            <td>                                 
-                            </td>
-                        </tr>
-                    </table>                    
-                </form>
-            </div>
+            <?if($_SESSION['type'] == "carrier"):?>
+                <div class="blueline-container">
+                    <span class="title1">Create new users</span>
+                    <form id="car_add" method="POST" action="<?=SCRIPT_PATH_ROOT?>include/ajax/carrier_admin.php" autocomplete="off">
+                        <input type="hidden" name="action" value="add_users">
+                        <input type="hidden" name="backurl" value="<?=SCRIPT_PATH_ROOT?>carrier_admin.php">
+                        <table class="add_users">
+                            <tr>
+                                <td>
+                                    <input class="first" type="text" name="first[]" value="<?=($_GET['first'][0])?$_GET['first'][0]:''?>" placeholder="First name">
+                                </td>
+                                <td>
+                                    <input class="last" type="text" name="last[]" value="<?=($_GET['last'][0])?$_GET['last'][0]:''?>" placeholder="Last name">
+                                </td>
+                                <td>
+                                    <input class="email" type="text" name="email[]" value="<?=($_GET['email'][0])?$_GET['email'][0]:''?>" placeholder="Email address">
+                                </td>
+                                <td>
+                                    <select class="type" name="type[]" placeholder="User type">
+                                        <option value="0" <?=($_GET['type'][0] == 0)?'selected':''?>>User type</option>
+                                        <?php if($_SESSION['type'] == "carrier"):?>
+                                            <option value="dispatch" <?=($_GET['type'][0] == "dispatch")?'selected':''?>>Dispatch</option>
+                                        <?php endif?>
+                                        <option value="driver"<?=($_GET['type'][0] == "driver")?'selected':''?>>Driver</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <?=($_GET['error'][0])?$_GET['error'][0]:''?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" name="first[]" value="<?=($_GET['first'][1])?$_GET['first'][1]:''?>" placeholder="First name">
+                                </td>
+                                <td>
+                                    <input type="text" name="last[]" value="<?=($_GET['last'][1])?$_GET['last'][1]:''?>" placeholder="Last name">
+                                </td>
+                                <td>
+                                    <input type="text" name="email[]" value="<?=($_GET['email'][1])?$_GET['email'][1]:''?>" placeholder="Email address">
+                                </td>
+                                <td>
+                                    <select name="type[]" placeholder="User type">
+                                        <option value="0" <?=($_GET['type'][1] == 0)?'selected':''?>>User type</option>
+                                        <?php if($_SESSION['type'] == "carrier"):?>
+                                            <option value="dispatch" <?=($_GET['type'][1] == "dispatch")?'selected':''?>>Dispatch</option>
+                                        <?php endif?>
+                                        <option value="driver"<?=($_GET['type'][1] == "driver")?'selected':''?>>Driver</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <?=($_GET['error'][1])?$_GET['error'][1]:''?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" name="first[]" value="<?=($_GET['first'][2])?$_GET['first'][2]:''?>" placeholder="First name">
+                                </td>
+                                <td>
+                                    <input type="text" name="last[]" value="<?=($_GET['last'][2])?$_GET['last'][2]:''?>" placeholder="Last name">
+                                </td>
+                                <td>
+                                    <input type="text" name="email[]" value="<?=($_GET['email'][2])?$_GET['email'][2]:''?>" placeholder="Email address">
+                                </td>
+                                <td>
+                                    <select name="type[]" placeholder="User type">
+                                        <option value="0" <?=($_GET['type'][2] == 0)?'selected':''?>>User type</option>
+                                        <?php if($_SESSION['type'] == "carrier"):?>
+                                            <option value="dispatch" <?=($_GET['type'][2] == "dispatch")?'selected':''?>>Dispatch</option>
+                                        <?php endif?>
+                                        <option value="driver"<?=($_GET['type'][2] == "driver")?'selected':''?>>Driver</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <?=($_GET['error'][2])?$_GET['error'][2]:''?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <a class="button js-submit block-right" data-formid="car_add">Create users</a>
+                                </td>
+                                <td>                                 
+                                </td>
+                            </tr>
+                        </table>                    
+                    </form>
+                </div>
             <?endif?>
             <div class="user_data_wrapper">
                 <table class="user_data">
@@ -122,7 +122,7 @@ if($_SESSION['type'] == "carrier" || $_SESSION['type'] == "dispatch"):?>
                             <td>User type</td>
                             <td>Status</td>
                             <td>Last session</td>
-							<td>Action</td>
+                            <td>Action</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -139,8 +139,11 @@ if($_SESSION['type'] == "carrier" || $_SESSION['type'] == "dispatch"):?>
                                 $cid = $row_tmp['carrier_id'];
                             }
                             $res = mysql_qw($site->link, "
-                                SELECT * FROM carrier_users WHERE carrier_id = ?",
-                                $cid);
+                                SELECT id, first, last, username, email, usertype, status, last_session FROM carrier_users WHERE carrier_id = ?
+                                UNION
+                                SELECT driver_id as id, first, last, username, email, 'driver' as usertype, status, last_session FROM driver_master WHERE carrier_id = ?
+                                ",
+                                $cid, $cid);
                             while($row = mysqli_fetch_assoc($res)):?>
                                 <tr>
                                     <td><?=$row['first']?></td>
@@ -150,7 +153,7 @@ if($_SESSION['type'] == "carrier" || $_SESSION['type'] == "dispatch"):?>
                                     <td><?=$row['usertype']?></td>
                                     <td><?=$row['status']?></td>
                                     <td><?=$row['last_session']?></td>
-									<td width="100px"><a href="<?=SCRIPT_PATH_ROOT?>include/ajax/user_delete.php?idc=<?=$row['id']?>" class="bold">Delete user</a></td>
+                                    <td width="100px"><a href="<?=SCRIPT_PATH_ROOT?>include/ajax/user_delete.php?idc=<?=$row['id']?>" class="bold">Delete user</a></td>
                                 </tr>
                             <?php endwhile?>
                     </tbody>

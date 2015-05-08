@@ -30,20 +30,20 @@ include(INC_PATH."/templates/header.php");
             <?php include(INC_PATH."/templates/left-menu.php");?>
 		
 		<div class="admin_right <?=($_SESSION['type'] == "dispatch")?' admin_right2':''?>">
-        <h2>Delete user</h2>
-		
-			<br/>
-	 
-        <form id="delete-form" method="post" action="<?php echo SCRIPT_PATH_ROOT ?>include/ajax/user_delete.php">
-		
-			<input type="hidden" name="user_id" value="<?php echo $id_card ?>">				
-
-			<br/>
-			<p class="form-label">Delete user <?php echo $user_array['first'].' '.$user_array['last'].'  email: '.$user_array['email']; ?>?</p>
-			<br/>
+	        <h2>Delete user</h2>
 			
-			 <p> <button name="delete" value="delete">Delete</button> <a href="<?php echo SCRIPT_PATH_ROOT ?>carrier_admin.php">Cancel</a> </p> 		
-        </form>
+				<br/>
+		 
+	        <form id="delete-form" method="post" action="<?php echo SCRIPT_PATH_ROOT ?>include/ajax/user_delete.php">
+			
+				<input type="hidden" name="user_id" value="<?php echo $id_card ?>">				
+
+				<br/>
+				<p class="form-label">Delete user <?php echo $user_array['first'].' '.$user_array['last'].'  email: '.$user_array['email']; ?>?</p>
+				<br/>
+				
+				 <p> <button name="delete" value="delete">Delete</button> <a href="<?php echo SCRIPT_PATH_ROOT ?>carrier_admin.php">Cancel</a> </p> 		
+	        </form>
 		</div>
 		
     </div>	
