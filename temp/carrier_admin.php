@@ -139,10 +139,7 @@ if($_SESSION['type'] == "carrier" || $_SESSION['type'] == "dispatch"):?>
                                 $cid = $row_tmp['carrier_id'];
                             }
                             $res = mysql_qw($site->link, "
-                                SELECT id, first, last, username, email, usertype, status, last_session FROM carrier_users WHERE carrier_id = ?
-                                UNION
-                                SELECT driver_id as id, first, last, username, email, 'driver' as usertype, status, last_session FROM driver_master WHERE carrier_id = ?
-                                ",
+                                SELECT id, first, last, username, email, usertype, status, last_session FROM carrier_users WHERE carrier_id = ?",
                                 $cid, $cid);
                             while($row = mysqli_fetch_assoc($res)):?>
                                 <tr>

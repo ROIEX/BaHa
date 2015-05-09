@@ -376,17 +376,15 @@ class Site{
 	}
 
 	public function auth($login, $pass){
-		//auth variants: carrier or free driver, driver, dispatcher, shipper.
-		//as free driver become driver, we firstly must search in drivers
-		//here in future will appear driver_masters
-
+		//auth variants: carrier or free driver, driver or dispatcher, shipper.
+		
 		//if no try carrier or free driver
 		$res = mysql_qw($this->link, "
 			SELECT carrier_id as id, email, type FROM carrier_master WHERE is_active = 'Y' AND (username = ? OR email = ?) AND password = ?
 		", $login, $login, md5($pass."_salt123")) or die(mysqli_error($this->link));
 		$row = mysqli_fetch_array($res);
 
-		//if no, test for dispatch
+		//if no, test for dispatch or driver
 		if(!$row['id']){
 			$res = mysql_qw($this->link, "
 				SELECT id, email, usertype as type FROM carrier_users WHERE (username = ? OR email = ?) AND password = ?
@@ -398,6 +396,7 @@ class Site{
 					UPDATE carrier_users SET last_session = ? WHERE id = ?",
 					date('m/d/Y'), $row['id']
 				);
+				$is_carrier_user = true;
 			}
 		}		
 
@@ -411,11 +410,13 @@ class Site{
 
 
 		if($row['id']){
-			$_SESSION['uid'] = $row['id'];
-			$_SESSION['email'] = $row['email'];
-			$_SESSION['type'] = trim($row['type']);
-			//админа - в authorise
-			//carrier - в carrier_admin.php
+			if($row['type'] != "driver" || !$is_carrier_user){
+				$_SESSION['uid'] = $row['id'];
+				$_SESSION['email'] = $row['email'];
+				$_SESSION['type'] = trim($row['type']);
+			}			
+			//admin - redirect to authorise
+			//carrier - redirect to carrier_admin.php
 			if(trim($row['type']) == 'admin') Site::redirect(SCRIPT_PATH_ROOT."authorise.php");
 			elseif(trim($row['type']) == 'carrier' || trim($row['type']) == 'dispatch') Site::redirect(SCRIPT_PATH_ROOT."carrier_admin.php");
 			//if($_POST['backurl']) Site::redirect($_POST['backurl']);
@@ -429,7 +430,7 @@ class Site{
 		return fasle;
 	}
 
-	public function setuppasswd($pass1, $pass2, $key, $is_driver = false){
+	public function setuppasswd($pass1, $pass2, $key){
 		unset($_SESSION['ERR_REPORTS']['passwdset']);
 		//password checking
 		if($pass1 != $pass2){
@@ -449,29 +450,19 @@ class Site{
 		}
 		if(!$_SESSION['ERR_REPORTS']['passwdset']){
 			//it's ok. set status ans session
-			//if it's a driver
-			if($is_driver == "Y"){
-				$table="driver_master";
+			$table = "carrier_users";
+			$res = mysql_qw($this->link, "
+				SELECT id, email, usertype FROM carrier_users WHERE activation_code = ?
+			", $key) or die(mysqli_error($this->link));
+			$row = mysqli_fetch_array($res);
+			//so, any user can reset pass, adding other table
+			if(!$row['id']){
+				$table = "carrier_master";
 				$res = mysql_qw($this->link, "
-					SELECT driver_id as id, email, 'driver' as usertype FROM driver_master WHERE activation_code = ?
+					SELECT carrier_id as id, email, type as usertype FROM carrier_master WHERE activation_code = ?
 				", $key) or die(mysqli_error($this->link));
 				$row = mysqli_fetch_array($res);
-			}
-			else{
-				$table = "carrier_users";
-				$res = mysql_qw($this->link, "
-					SELECT id, email, usertype FROM carrier_users WHERE activation_code = ?
-				", $key) or die(mysqli_error($this->link));
-				$row = mysqli_fetch_array($res);
-				//so, any user can reset pass, adding other table
-				if(!$row['id']){
-					$table = "carrier_master";
-					$res = mysql_qw($this->link, "
-						SELECT carrier_id as id, email, type as usertype FROM carrier_master WHERE activation_code = ?
-					", $key) or die(mysqli_error($this->link));
-					$row = mysqli_fetch_array($res);
-				}
-			}
+			}			
 
 			if($row['id']){
 				if($table == "carrier_users"){
@@ -482,10 +473,11 @@ class Site{
 					
 					// //Subscribe plan for driver with Stripe
 					// carrier_stripe::plan_driver($this, $row['id']);
-					$_SESSION['uid'] = $row['id'];
-					$_SESSION['email'] = $row['email'];
-					$_SESSION['type'] = trim($row['usertype']);
-					
+					if($row['usertype'] == 'dispatch'){
+						$_SESSION['uid'] = $row['id'];
+						$_SESSION['email'] = $row['email'];
+						$_SESSION['type'] = trim($row['usertype']);
+					}					
 				}elseif($table == "carrier_master"){
 					mysql_qw($this->link, "
 						UPDATE carrier_master SET is_active = 'Y', password = ? WHERE carrier_id = ?",
@@ -494,13 +486,7 @@ class Site{
 					$_SESSION['uid'] = $row['id'];
 					$_SESSION['email'] = $row['email'];
 					$_SESSION['type'] = trim($row['usertype']);
-				}
-				elseif($table == "driver_master"){
-					mysql_qw($this->link, "
-						UPDATE driver_master SET status = 'active', last_session = ?, password = ? WHERE driver_id = ?",
-						date('m/d/Y'), md5($pass1."_salt123"), $row['id']
-					);
-				}				
+				}								
 			}
 			else{
 				$_SESSION['ERR_REPORTS']['passwdset'] = 'User not found';

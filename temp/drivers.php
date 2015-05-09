@@ -217,9 +217,9 @@ if($_SESSION['type'] == "carrier" || $_SESSION['type'] == "dispatch"):?>
                 $cid = $row_tmp['carrier_id'];
             }
 			$res_tmp = mysql_qw($site->link, "
-				SELECT dm.first, dm.last, dr.eta, dr.pickup_time, dr.HoS, dr.bill_of_lading, dr.pre_schdeduled, dr.status, sm.shipper_name as customer FROM driver_master dm
+				SELECT dm.first, dm.last, dr.eta, dr.pickup_time, dr.HoS, dr.bill_of_lading, dr.pre_schdeduled, dr.status, sm.shipper_name as customer FROM carrier_users dm
 				JOIN driver_route dr 
-					ON dr.driver_id = dm.driver_id
+					ON dr.driver_id = dm.id
 				JOIN shipper_locations sl 
 					ON sl.location_id = dr.shipper_location_id
 				JOIN shipper_master sm 

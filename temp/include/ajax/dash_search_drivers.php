@@ -1,18 +1,9 @@
 <?php
 include("../initializer.php");
 //let's build query
-//$query = "SELECT dr.route_id, dr.status, dm.first, dm.last, dm.longitude, dm.latitude, sm.shipper_name as customer FROM driver_route dr
-//	JOIN driver_master dm 
-//		ON dm.driver_id = dr.driver_id
-//	JOIN shipper_locations sl 
-//		ON sl.location_id = dr.shipper_location_id
-//	JOIN shipper_master sm 
-//		ON sm.shipper_id = sl.shipper_id
-//	WHERE dm.carrier_id = ?
-//";
 $query = "SELECT dr.route_id, dr.status, dm.first, dm.last, dm.longitude, dm.latitude FROM driver_route dr
-	JOIN driver_master dm 
-		ON dm.driver_id = dr.driver_id
+	JOIN carrier_users dm 
+		ON dm.id = dr.driver_id
 	WHERE dm.carrier_id = ?
 	AND dr.shipper_location_id IN (SELECT sl.location_id FROM shipper_locations sl WHERE ".(($_POST['customer'] == "all")?"'1'":"sl.shipper_id")." = ?)
 ";//dirty hack
