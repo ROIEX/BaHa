@@ -52,49 +52,6 @@ class Site{
 		elseif(!preg_match("#[A-Z]+#", $formData['password']) ) {
 			$error_text[] = "Passwords must contain at least one uppercase letter";
 		}
-		//search for duplicate			
-		$data = mysql_qw($this->link, "
-			SELECT carrier_id FROM carrier_master
-			WHERE email = ?",
-			$formData['email']
-		);// or die(mysql_error());
-		$iid = mysqli_fetch_assoc($data);
-		if($iid['carrier_id']){
-			//$error_text[] = 'Your account is being reviewed. We will contact you shortly.';
-			$return = array(
-				'result' => 'mail_error'				
-			);
-			return json_encode($return);
-		}
-		//validating #DOT and #MC numbers throught http://safer.fmcsa.dot.gov/CompanySnapshot.aspx
-		//name1
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, 'http://safer.fmcsa.dot.gov/query.asp');
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_POST, TRUE);
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, 'searchtype=ANY&query_type=queryCarrierSnapshot&query_param=MC_MX&query_string='.$formData['mc']);
-		$result = curl_exec($ch);
-		$saveInfoForAdressParsing = $result;
-		//2 steps parsing. cause of greedy / ungreedy algorythm
-		preg_match('#(Carrier">Legal Name.*<TD.*>.*<\/TD>.*<\/TR>)#sU', $result, $tmp);
-		preg_match('#<TD.*>([\w\s]+).*<\/TD>#s', $tmp[1], $tmp2);
-		$legalName1 = $tmp2[1];
-		curl_close($ch);
-		//name2
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, 'http://safer.fmcsa.dot.gov/query.asp');
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_POST, TRUE);
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, 'searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string='.$formData['dot']);
-		$result = curl_exec($ch);
-		//2 steps parsing. cause of greedy / ungreedy algorythm
-		preg_match('#(Carrier">Legal Name.*<TD.*>.*<\/TD>.*<\/TR>)#sU', $result, $tmp);
-		preg_match('#<TD.*>([\w\s]+).*<\/TD>#s', $tmp[1], $tmp2);
-		$legalName2 = $tmp2[1];
-		curl_close($ch);
-		//MC is last check, so
 		if(count($error_text) > 0){
 			$return = array(
 				'result' => 'error',
@@ -102,16 +59,95 @@ class Site{
 			);
 			return json_encode($return);
 		}
-		elseif($legalName1 != $legalName2 || is_null($legalName1) || is_null($legalName2)){
-			$return = array(
-				'result' => 'api_error'				
-			);
-			return json_encode($return);
-		}		
-		else{
-			//if no error write in DB and send message
-			$key = md5($formData['email']."_salt123");
-			//write to DB
+		//search for duplicate for carrier and several checks for carrier
+		if($formData['type'] == 'carrier'){
+			$data = mysql_qw($this->link, "
+				SELECT carrier_id FROM carrier_master
+				WHERE email = ?",
+				$formData['email']
+			);// or die(mysql_error());
+			$iid = mysqli_fetch_assoc($data);
+			if($iid['carrier_id']){
+				//$error_text[] = 'Your account is being reviewed. We will contact you shortly.';
+				$return = array(
+					'result' => 'mail_error'
+				);
+				return json_encode($return);
+			}
+			//search for duplicating MC or DOT
+			$data = mysql_qw($this->link, "
+				SELECT carrier_id FROM carrier_master
+				WHERE (mc_num = ? OR dot_num = ?) AND type='carrier'",
+				$formData['mc'], $formData['dot']
+			);// or die(mysql_error());
+			$iid = mysqli_fetch_assoc($data);
+			if($iid['carrier_id']){
+				$return = array(
+					'result' => 'api_error'
+				);
+				return json_encode($return);
+			}
+
+			//validating #DOT and #MC numbers throught http://safer.fmcsa.dot.gov/CompanySnapshot.aspx
+			//name1
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, 'http://safer.fmcsa.dot.gov/query.asp');
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($ch, CURLOPT_POST, TRUE);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, 'searchtype=ANY&query_type=queryCarrierSnapshot&query_param=MC_MX&query_string='.$formData['mc']);
+			$result = curl_exec($ch);
+			$saveInfoForAdressParsing = $result;
+			//2 steps parsing. cause of greedy / ungreedy algorythm
+			preg_match('#(Carrier">Legal Name.*<TD.*>.*<\/TD>.*<\/TR>)#sU', $result, $tmp);
+			preg_match('#<TD.*>([\w\s]+).*<\/TD>#s', $tmp[1], $tmp2);
+			$legalName1 = $tmp2[1];
+			curl_close($ch);
+			//name2
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, 'http://safer.fmcsa.dot.gov/query.asp');
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($ch, CURLOPT_POST, TRUE);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, 'searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string='.$formData['dot']);
+			$result = curl_exec($ch);
+			//2 steps parsing. cause of greedy / ungreedy algorythm
+			preg_match('#(Carrier">Legal Name.*<TD.*>.*<\/TD>.*<\/TR>)#sU', $result, $tmp);
+			preg_match('#<TD.*>([\w\s]+).*<\/TD>#s', $tmp[1], $tmp2);
+			$legalName2 = $tmp2[1];
+			curl_close($ch);
+			//MC is last check, so
+			if($legalName1 != $legalName2 || is_null($legalName1) || is_null($legalName2)){
+				$return = array(
+					'result' => 'api_error'
+				);
+				return json_encode($return);
+			}
+		}
+		//search duplicate for shipper
+		elseif($formData['type'] == 'shipper'){
+			$data = mysql_qw($this->link, "
+				SELECT sm.shipper_id FROM shipper_master sm
+					JOIN shipper_contacts sc ON sc.shipper_id = sm.shipper_id
+				WHERE sc.email = ?",
+				$formData['email']
+			);// or die(mysql_error());
+			$iid = mysqli_fetch_assoc($data);
+			if($iid['shipper_id']){
+				//$error_text[] = 'Your account is being reviewed. We will contact you shortly.';
+				$return = array(
+					'result' => 'mail_error'
+				);
+				return json_encode($return);
+			}
+		}
+
+		
+		//if no error write in DB and send message
+		$key = md5($formData['email']."_salt123");
+		//write to DB
+		//if it's a carrier or driver:
+		if($formData['type'] == 'carrier' || $formData['type'] == 'driver'){
 			mysql_qw($this->link, "
 				INSERT INTO carrier_master
 				(type, email, username, password, is_active, activation_code, first, last, carrier_name, phone, position, mc_num, dot_num, carrierdrivers, shippinglocations, registration_date)
@@ -119,20 +155,14 @@ class Site{
 				$formData['type'], $formData['email'], $formData['username'], md5($formData['password']."_salt123"), "N", $key, $formData['first'], $formData['last'], $formData['company'], $formData['phone'], $formData['position'], (($formData['type']=='carrier' || $formData['type']=='driver')?$formData['mc']:'NULL'), (($formData['type']=='carrier' || $formData['type']=='driver')?$formData['dot']:'NULL'), (($formData['type']=='carrier')?$formData['carrierdrivers']:'NULL'), (($formData['type']=='shipper')?$formData['shippinglocations']:'NULL')/*, date('m/d/Y')*/
 			) or die(mysqli_error($this->link));
 			//get id of new user
-			sleep(4);
-			$data = mysql_qw($this->link, "
-				SELECT carrier_id FROM carrier_master
-				WHERE email = ? AND activation_code = ?",
-				$formData['email'], $key
-			);// or die(mysql_error());
-			$iid = mysqli_fetch_assoc($data);
+			$iid = $this->link->insert_id;
 			//write down adress data from form
 			//city_id, state_id, country_id, zip_code i make varchar, cause of no where fow now get "id". later it weill must be an INT type
 			mysql_qw($this->link, "
 				INSERT INTO carrier_locations
 				(carrier_id, street_addr, street_addr2, city_id, state_id, country_id, zip_code, source)
 				VALUES(?,?,?,?,?,NULL,?,'form')",
-				$iid['carrier_id'], $formData['address1'], $formData['address2'], $formData['city'], $formData['state'], $formData['zip'] 
+				$iid, $formData['address1'], $formData['address2'], $formData['city'], $formData['state'], $formData['zip'] 
 			) or die(mysqli_error($this->link));
 
 			//parse adress from parser answer $saveInfoForAdressParsing
@@ -177,12 +207,10 @@ class Site{
 					INSERT INTO carrier_locations
 					(carrier_id, street_addr, street_addr2, city_id, state_id, country_id, zip_code, source, lat, lng)
 					VALUES(?,?,?,?,?,?,?,'parser',?,?)",
-					$iid['carrier_id'], $address_house." ".$address_route, "", $city, $state, $country, $zip, $addrsrc['results'][0]['geometry']['location']['lat'], $addrsrc['results'][0]['geometry']['location']['lng']
+					$iid, $address_house." ".$address_route, "", $city, $state, $country, $zip, $addrsrc['results'][0]['geometry']['location']['lat'], $addrsrc['results'][0]['geometry']['location']['lng']
 				) or die(mysqli_error($this->link));	
 			}
 			
-
-
 			//API for carrier
 			if($formData['type'] == 'carrier' || $formData['type'] == 'driver'){				
 				//carrier - make API
@@ -198,7 +226,7 @@ class Site{
 				//write info in db
 				$res_tmp = mysql_qw($this->link, "
 					SELECT carrier_id FROM carrier_FMCSA WHERE carrier_id = ?
-				", $iid['carrier_id']);
+				", $iid);
 				$row_tmp = mysqli_fetch_array($res_tmp);
 				if(!$row_tmp['carrier_id']){
 					//prepare data from FMCSA.
@@ -211,62 +239,86 @@ class Site{
 						INSERT INTO carrier_FMCSA
 						(safety_rating, cargo_insurance, bipd, carrier_id)
 						VALUES(?,?,?,?)",
-						$prep['safety_rating'], $prep['cargo_insurance'], $prep['bipd'], $iid['carrier_id']
+						$prep['safety_rating'], $prep['cargo_insurance'], $prep['bipd'], $iid
 					);
 				}
 			}
-
-			//send mail
-			if($formData['type'] != 'carrier'){
-				//standart mail
-				$to      = $formData['email'];
-				$subject = 'registration confirm';
-				$message = 'Please validate your account by clicking: '.SITE.SCRIPT_PATH_ROOT.'registrationconfirm.php?key='.$key;
-				$headers = 'From: '.FROM_MAIL;
-			}
-			else{
-			//beauty mail for carrier
-				$message = '
-					<html>
-					<body style="color: black;
-					    font-family: Verdana,Helvetica,sans-serif;
-					    font-size: 12px;
-					    font-style: normal;
-					    line-height: 1.3;">
-					<div style="text-align:center;margin-bottom:20px">
-					    <img style="display: block; margin: 10px auto 20px;" src="'.SITE.SCRIPT_PATH_ROOT.'images/logo.png" width="140px">
-					    <p style="font-size:18px;color:#120073">Welcome to BridgeHaul!</p>
-					    <div style="height:1px;background:#8E9DB0;width:80%;margin: 10px auto;"></div>
-					    <p>Please click the button below to confirm your email address and activate your<br>
-					    account.If the button is not visible please paste the url into your web browser.</p>
-					    <a style="padding: 10px; background-color: #376092; text-decoration: none; font-size: 16px; font-weight: bold; color: #fff; display:inline-block;" href="'.SITE.SCRIPT_PATH_ROOT.'registrationconfirm.php?key='.$key.'">Confirm email</a>
-					</div>
-					<p>'.SITE.SCRIPT_PATH_ROOT.'registrationconfirm.php?key='.$key.'</p>
-					<div style="text-align:center;">
-						<span style="font-size:14px;">Upon activation you will have the ability to:</span>
-					</div>
-					<ul style="list-style-type: none;margin: 0 0 20px;">
-					    <li> - Add drivers, dispatchers and administrative users to your account</li>
-					    <li> - Track drivers location real-time, manage and monitor Hours of Servise logs and Driver Vehicle Inspection Reports once drivers download and launch the mobile application</li>
-					</ul>
-					<div style="width: 300px;margin: 0 auto;position: relative">
-					    <a href="#" style="float:left;">Contact us</a>
-					    <a href="#" style="float:right;">Privacy Policy</a>
-					</div>
-					</body>
-					</html>';
-				$to      = $formData['email'];
-				$subject = 'registration confirm';
-				$headers = "MIME-Version: 1.0\r\n";
-			    	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-				$headers .= 'From: '.FROM_MAIL;				
-			}			
-
-			mail($to, $subject, $message, $headers);
-			$return = array(
-				'result' => 'ok',
-			);
 		}
+		elseif($formData['type'] == 'shipper'){
+			mysql_qw($this->link, "
+				INSERT INTO shipper_master
+				(shipper_name, industry_id, registration_date)
+				VALUES(?,?,NOW())",
+				$formData['company'], ""
+			) or die(mysqli_error($this->link));
+			//get id of new user
+			$iid = $this->link->insert_id;			
+			//write down contact and adress data from form
+			mysql_qw($this->link, "
+				INSERT INTO shipper_locations
+				(shipper_id, street_addr, street_addr2, city_id, state_id, country_id, zip_code, latitude, longitude)
+				VALUES(?,?,?,?,?,NULL,?,0,0)",
+				$iid, $formData['address1'], $formData['address2'], $formData['city'], $formData['state'], $formData['zip'] 
+			) or die(mysqli_error($this->link));
+			mysql_qw($this->link, "
+				INSERT INTO shipper_contacts
+				(shipper_id, first, last, title, email, phone, username, password, email_confirm, activation_code, shippinglocations)
+				VALUES(?,?,?,'',?,?,?,?,'N',?,?)",
+				$iid, $formData['first'], $formData['last'], $formData['email'], $formData['phone'], $formData['username'], md5($formData['password']."_salt123"), $key, $formData['shippinglocations']
+			) or die(mysqli_error($this->link));
+		}
+
+		//send mail
+		if($formData['type'] != 'carrier'){
+			//standart mail
+			$to      = $formData['email'];
+			$subject = 'registration confirm';
+			$message = 'Please validate your account by clicking: '.SITE.SCRIPT_PATH_ROOT.'registrationconfirm.php?key='.$key;
+			$headers = 'From: '.FROM_MAIL;
+		}
+		else{
+		//beauty mail for carrier
+			$message = '
+				<html>
+				<body style="color: black;
+				    font-family: Verdana,Helvetica,sans-serif;
+				    font-size: 12px;
+				    font-style: normal;
+				    line-height: 1.3;">
+				<div style="text-align:center;margin-bottom:20px">
+				    <img style="display: block; margin: 10px auto 20px;" src="'.SITE.SCRIPT_PATH_ROOT.'images/logo.png" width="140px">
+				    <p style="font-size:18px;color:#120073">Welcome to BridgeHaul!</p>
+				    <div style="height:1px;background:#8E9DB0;width:80%;margin: 10px auto;"></div>
+				    <p>Please click the button below to confirm your email address and activate your<br>
+				    account.If the button is not visible please paste the url into your web browser.</p>
+				    <a style="padding: 10px; background-color: #376092; text-decoration: none; font-size: 16px; font-weight: bold; color: #fff; display:inline-block;" href="'.SITE.SCRIPT_PATH_ROOT.'registrationconfirm.php?key='.$key.'">Confirm email</a>
+				</div>
+				<p>'.SITE.SCRIPT_PATH_ROOT.'registrationconfirm.php?key='.$key.'</p>
+				<div style="text-align:center;">
+					<span style="font-size:14px;">Upon activation you will have the ability to:</span>
+				</div>
+				<ul style="list-style-type: none;margin: 0 0 20px;">
+				    <li> - Add drivers, dispatchers and administrative users to your account</li>
+				    <li> - Track drivers location real-time, manage and monitor Hours of Servise logs and Driver Vehicle Inspection Reports once drivers download and launch the mobile application</li>
+				</ul>
+				<div style="width: 300px;margin: 0 auto;position: relative">
+				    <a href="#" style="float:left;">Contact us</a>
+				    <a href="#" style="float:right;">Privacy Policy</a>
+				</div>
+				</body>
+				</html>';
+			$to      = $formData['email'];
+			$subject = 'registration confirm';
+			$headers = "MIME-Version: 1.0\r\n";
+		    	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+			$headers .= 'From: '.FROM_MAIL;				
+		}			
+
+		mail($to, $subject, $message, $headers);
+		$return = array(
+			'result' => 'ok',
+		);
+		
 		return json_encode($return);		
 	}
 	
@@ -276,57 +328,83 @@ class Site{
 		die();
 	}
 
-	public function registrate($key){
+	public function registrate($key, $is_driver = false){
 		//search inactive record with same hash
-		//if shipper -write into DB
-		//else - API query
+		//if it's a driver - it hase separate logic
+		if($is_driver == "Y"){
+			$res = mysql_qw($this->link, "
+				SELECT id, email, usertype FROM carrier_users WHERE activation_code = ? AND status != 'active'
+			", $key) or die(mysqli_error($this->link));
+			$row = mysqli_fetch_array($res);
+			if($row['id']){
+				mysql_qw($this->link, "
+					UPDATE carrier_users SET status = 'active', last_session = ? WHERE id = ?",
+					date('m/d/Y'), $row['id']
+				);// or die(mysql_error());
+				Site::redirect(SCRIPT_PATH_ROOT);
+			}
+			else{
+				echo "User not found";
+			}
+			return;
+		}
+
+		//may be it's a carrier or free driver
 		$res = mysql_qw($this->link, "
-			SELECT carrier_id, type, email  FROM carrier_master WHERE is_active = 'N' AND activation_code = ?
+			SELECT carrier_id, type, email FROM carrier_master WHERE is_active = 'N' AND activation_code = ?
 		", $key);
 		$row = mysqli_fetch_array($res);
 		if($row['carrier_id']){
-			if(trim($row['type']) == "shipper"){
-				//shipper - simle activate it
+			mysql_qw($this->link, "
+			UPDATE carrier_master SET is_active = 'Y' WHERE carrier_id = ?",
+			$row['carrier_id']
+			);// or die(mysql_error());
+			$_SESSION['uid'] = $row['carrier_id'];
+			$_SESSION['email'] = $row['email'];
+			$_SESSION['type'] = trim($row['type']);
+			//send mail to admin
+			$to      = ADMIN_MAIL;
+			$subject = 'New '.trim($row['type']).' is registred';
+			$message = 'New '.trim($row['type']).' is registred. Id = '.$row['carrier_id'];
+			$headers = 'From: '.FROM_MAIL.'\r\n';
+
+			mail($to, $subject, $message, $headers);
+			//all is ok
+			Site::redirect(SCRIPT_PATH_ROOT."carrier_admin.php");
+		}
+		else{
+			//we have not found carrier or free driver, but it's may be a shipper
+			$res = mysql_qw($this->link, "
+				SELECT shipper_id, 'shipper' as type, email FROM shipper_contacts WHERE email_confirm = 'N' AND activation_code = ?
+			", $key);
+			$row = mysqli_fetch_array($res);
+			if($row['shipper_id']){
 				mysql_qw($this->link, "
-					UPDATE carrier_master SET is_active = 'Y' WHERE carrier_id = ?",
-					$row['carrier_id']
+					UPDATE shipper_contacts SET email_confirm = 'Y' WHERE shipper_id = ?",
+					$row['shipper_id']
 				);// or die(mysql_error());
-				$_SESSION['uid'] = $row['carrier_id'];
+				$_SESSION['uid'] = $row['shipper_id'];
 				$_SESSION['email'] = $row['email'];
 				$_SESSION['type'] = trim($row['type']);
 				Site::redirect(SCRIPT_PATH_ROOT);
 			}
-			elseif(trim($row['type']) == "carrier"){
-				mysql_qw($this->link, "
-				UPDATE carrier_master SET is_active = 'Y' WHERE carrier_id = ?",
-				$row['carrier_id']
-				);// or die(mysql_error());
-				$_SESSION['uid'] = $row['carrier_id'];
-				$_SESSION['email'] = $row['email'];
-				$_SESSION['type'] = trim($row['type']);
-				//send mail to admin
-				$to      = ADMIN_MAIL;
-				$subject = 'New carrier is registred';
-				$message = 'New carrier is registred. Id = '.$row['carrier_id'];
-				$headers = 'From: '.FROM_MAIL.'\r\n';
-
-				mail($to, $subject, $message, $headers);
-				//all is ok
-				Site::redirect(SCRIPT_PATH_ROOT."carrier_admin.php");				
+			else{
+				//user not found
+				echo "User not found";
 			}
-		}
-		else{
-			//user not found
-			echo "User not found";
 		}
 	}
 
 	public function auth($login, $pass){
+		//auth variants: carrier or free driver, driver or dispatcher, shipper.
+		
+		//if no try carrier or free driver
 		$res = mysql_qw($this->link, "
 			SELECT carrier_id as id, email, type FROM carrier_master WHERE is_active = 'Y' AND (username = ? OR email = ?) AND password = ?
 		", $login, $login, md5($pass."_salt123")) or die(mysqli_error($this->link));
 		$row = mysqli_fetch_array($res);
-        //addition test. If it is carrier's users - search for them.
+
+		//if no, test for dispatch or driver
 		if(!$row['id']){
 			$res = mysql_qw($this->link, "
 				SELECT id, email, usertype as type FROM carrier_users WHERE (username = ? OR email = ?) AND password = ?
@@ -338,14 +416,27 @@ class Site{
 					UPDATE carrier_users SET last_session = ? WHERE id = ?",
 					date('m/d/Y'), $row['id']
 				);
+				$is_carrier_user = true;
 			}
+		}		
+
+		//if no, test for shipper
+		if(!$row['id']){
+			$res = mysql_qw($this->link, "
+				SELECT shipper_id as id, email, 'shipper' as type FROM shipper_contacts WHERE (username = ? OR email = ?) AND password = ?
+			", $login, $login, md5($pass."_salt123")) or die(mysqli_error($this->link));
+			$row = mysqli_fetch_array($res);
 		}
+
+
 		if($row['id']){
-			$_SESSION['uid'] = $row['id'];
-			$_SESSION['email'] = $row['email'];
-			$_SESSION['type'] = trim($row['type']);
-			//админа - в authorise
-			//carrier - в carrier_admin.php
+			if($row['type'] != "driver" || !$is_carrier_user){
+				$_SESSION['uid'] = $row['id'];
+				$_SESSION['email'] = $row['email'];
+				$_SESSION['type'] = trim($row['type']);
+			}			
+			//admin - redirect to authorise
+			//carrier - redirect to carrier_admin.php
 			if(trim($row['type']) == 'admin') Site::redirect(SCRIPT_PATH_ROOT."authorise.php");
 			elseif(trim($row['type']) == 'carrier' || trim($row['type']) == 'dispatch') Site::redirect(SCRIPT_PATH_ROOT."carrier_admin.php");
 			//if($_POST['backurl']) Site::redirect($_POST['backurl']);
@@ -391,26 +482,31 @@ class Site{
 					SELECT carrier_id as id, email, type as usertype FROM carrier_master WHERE activation_code = ?
 				", $key) or die(mysqli_error($this->link));
 				$row = mysqli_fetch_array($res);
-			}
+			}			
+
 			if($row['id']){
 				if($table == "carrier_users"){
 					mysql_qw($this->link, "
 						UPDATE carrier_users SET status = 'active', last_session = ?, password = ? WHERE id = ?",
-						date('m/d/Y'), md5($pass1."_salt123"),$row['id']
+						date('m/d/Y'), md5($pass1."_salt123"), $row['id']
 					);// or die(mysql_error());
 					
 					// //Subscribe plan for driver with Stripe
 					// carrier_stripe::plan_driver($this, $row['id']);
-					
+					if($row['usertype'] == 'dispatch'){
+						$_SESSION['uid'] = $row['id'];
+						$_SESSION['email'] = $row['email'];
+						$_SESSION['type'] = trim($row['usertype']);
+					}					
 				}elseif($table == "carrier_master"){
 					mysql_qw($this->link, "
 						UPDATE carrier_master SET is_active = 'Y', password = ? WHERE carrier_id = ?",
 						md5($pass1."_salt123"), $row['id']
 					);// or die(mysql_error());
-				}
-				$_SESSION['uid'] = $row['id'];
-				$_SESSION['email'] = $row['email'];
-				$_SESSION['type'] = trim($row['usertype']);
+					$_SESSION['uid'] = $row['id'];
+					$_SESSION['email'] = $row['email'];
+					$_SESSION['type'] = trim($row['usertype']);
+				}								
 			}
 			else{
 				$_SESSION['ERR_REPORTS']['passwdset'] = 'User not found';

@@ -14,7 +14,7 @@ if($_POST['action'] == 'add_users'){
 		elseif(!preg_match('#[a-zA-Z0-9_\-.+]+@[a-zA-Z0-9\-]+.[a-zA-Z]+#', $_POST['email'][$key])){
 			$errors[$key] = 'Email is uncorrect.';
 		}else{
-			//checking duplicate mail
+			//checking duplicate mail for dispatch
 			$res_tmp = mysql_qw($site->link, "
 				SELECT id FROM carrier_users
 				WHERE email = ?",
@@ -22,7 +22,9 @@ if($_POST['action'] == 'add_users'){
 			$row_tmp = mysqli_fetch_array($res_tmp);
 			if($row_tmp['id']){
 				$errors[$key] = 'Duplicate email.';
-			}else{
+			}
+			
+			if(!$errors){
 				//all good - do db things
 				$tmp = explode('@', $_POST['email'][$key]);
 				$name = $tmp[0];
@@ -39,11 +41,12 @@ if($_POST['action'] == 'add_users'){
 					$row_tmp = mysqli_fetch_array($res_tmp);
 					$cid = $row_tmp['carrier_id'];
 				}
+				//db
 				mysql_qw($site->link, "
 	                INSERT INTO carrier_users 
-	                (first, last, username, email, usertype, status, last_session, owner_id, owner_type_tablename, activation_code, carrier_id)
+	                (first, last, username, email, usertype, status, last_session, owner_id, owner_type_tablename, activation_code, carrier_id, rote_status, longitude, latitude)
 	                VALUES 
-	                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+	                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
 					$_POST['first'][$key],
 					$_POST['last'][$key],
 					$name,
@@ -54,15 +57,28 @@ if($_POST['action'] == 'add_users'){
 					$_SESSION['uid'],
 					(($_SESSION['type'] == 'carrier')?'carrier_master':'carrier_users'),
 					$activation_code,
-					$cid);
+					$cid,
+					(($_POST['type'][$key] == "driver")?'Unscheduled':'None'),
+					(($_POST['type'][$key] == "driver")?'0':'None'),
+					(($_POST['type'][$key] == "driver")?'0':'None')
+					);
+
+				if($_POST['type'][$key] == "dispatch"){
+					$message = "<html><body>";
+					$message .= "<p>Your BridgeHaul account has been created.</p>
+					<p>Your username is ".$name."</p>
+					<a style='padding: 10px; background-color: #376092; text-decoration: none; font-size: 16px; font-weight: bold; color: #fff;' href='".SITE.SCRIPT_PATH_ROOT.'index.php?key='.$activation_code."&action=setuppasswd'>Set my password</a><br><br>";
+				}
+				elseif($_POST['type'][$key] == "driver"){
+					$message = "<html><body>";
+					$message .= "<p>Please accept invitation.</p>
+					<p>Your username is ".$name."</p>
+					<a style='padding: 10px; background-color: #376092; text-decoration: none; font-size: 16px; font-weight: bold; color: #fff;' href='".SITE.SCRIPT_PATH_ROOT.'registrationconfirm.php?key='.$activation_code."&is_driver=Y>Accept invitation</a><br><br>";				
+				}
 				//db ok - send mail
 				//send mail
 				$to      = $_POST['email'][$key];
-				$subject = $_POST['first'][$key].', Welcome to BridgeHaul';
-				$message = "<html><body>";
-				$message .= "<p>Your BridgeHaul account has been created.</p>
-				<p>Your username is ".$name."</p>
-				<a style='padding: 10px; background-color: #376092; text-decoration: none; font-size: 16px; font-weight: bold; color: #fff;' href='".SITE.SCRIPT_PATH_ROOT.'index.php?key='.$activation_code."&action=setuppasswd'>Set my password</a><br><br>";
+				$subject = $_POST['first'][$key].', Welcome to BridgeHaul';				
 				$message .= '</body></html>';
 				$headers = "MIME-Version: 1.0\r\n";
 				$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";

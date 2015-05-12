@@ -1,6 +1,4 @@
 <?php
-//DEFINE("SCRIPT_PATH_ROOT","/temp/");
-//DEFINE("INC_PATH",dirname(__FILE__).DIRECTORY_SEPARATOR);
 include( dirname(__FILE__)."/include/initializer.php");
 $shortHeader = "Y";
 $dashboardContentModifier = "Y";
@@ -10,13 +8,14 @@ include(INC_PATH."/templates/header.php");
 
 <link rel="stylesheet" type="text/css" href="<?=SCRIPT_PATH_ROOT?>js/jquery-ui-1.11.3.custom/jquery-ui.css">
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry"></script>
 <script>
 	var map;
 	function initialize() {
+	var geocoder = new google.maps.Geocoder();
 	var mapOptions = {
 	zoom: 8,
-	center: new google.maps.LatLng(-34.397, 140.644)
+	center: new google.maps.LatLng(-34.928, 138.599)
 	};
 	map = new google.maps.Map(document.getElementById('map'),
 	mapOptions);
@@ -45,11 +44,51 @@ include(INC_PATH."/templates/header.php");
 		'</div>'+
 		'</div>';
 
-	var infowindow = new google.maps.InfoWindow({
-		content: contentString,
-		position: new google.maps.LatLng(-34.397, 140.644)
-	});
+	//var infowindow = new google.maps.InfoWindow({
+	//	content: contentString,
+	//	position: new google.maps.LatLng(-34.397, 140.644)
+	//});
 
+
+	function codeAddress(address, drivers) {
+		var geocoder = new google.maps.Geocoder();
+		geocoder.geocode( { 'address': address}, function(results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+			$.each(drivers, function(i, val){
+				distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng()), new google.maps.LatLng(val.latitude, val.longitude));
+				distance = distance / 1609;
+				if(distance < $('.loc_around').val()){
+					showDriverWindow(val);
+				}
+			});
+			return true;      	
+		} else {
+		return false;
+		}
+		});
+	};
+
+	var markers = new Array;
+	var infowindows = new Array;
+
+	function showDriverWindow(driver){
+		var marker = new google.maps.Marker({  
+          map: map, position: new google.maps.LatLng(driver.latitude, driver.longitude)
+        });
+        markers.push(marker);
+        var content = "Driver: " + driver.first+" "+driver.last
+		var infowindow = new google.maps.InfoWindow();
+		infowindow.setContent(content);
+        infowindow.open(map,marker);
+	}
+
+	function DeleteMarkers() {
+        //Loop through all the markers and remove
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+        }
+        markers = [];
+    };
 
 
 //dashboard
@@ -59,7 +98,7 @@ $(document).ready(function() {
             $('.js-dashboard-table').hide();
             $('.js-dashboard-mapview').show();
             google.maps.event.trigger(map, 'resize');
-            infowindow.open(map);
+            //infowindow.open(map);
         }
         else{
             $('.js-dashboard-table').show();
@@ -104,14 +143,26 @@ $(document).ready(function() {
     	$form = $(this);
         $form.find('.error').html("");
         $form.find('.preloader').show();
+        DeleteMarkers();
+        $('.dash-map-right .summary .content').html('<p>Total trucks: 0</p>');
     	$.ajax({
             type: $(this).attr('method'),
             url: $(this).attr('action'),
             data: $(this).serialize(),
             dataType: 'json',
             success: function (data) {
-                if(data.result == 'ok'){
-                    //location.href = $form.find('input[name=backurl]').val();
+                if(data.result){
+                    //location workaround
+                    //search around point
+                    if($('.loc_target').val().length > 0 && $('.loc_around').val() != "any"){
+                    	codeAddress($('.loc_target').val(), data.result);                     	
+                    }else{
+                    	//show all what find
+                    	$.each(data.result, function(i, val){
+							showDriverWindow(val);							
+						});                    	
+                    }
+                    $('.dash-map-right .summary .content').html('<p>Total trucks: '+markers.length+'</p>');
                 }else if(data.result == 'error'){                    
                     $errormsg = "";
                     $.each(data.error, function(key, val){
@@ -120,6 +171,7 @@ $(document).ready(function() {
                     $form.find('.preloader').hide();
                     $form.find('.error').html($errormsg);                    
                 }
+                $form.find('.preloader').hide();                
             },
             error: function(jqXHR, textStatus, errorMessage) {
                 $form.find('.preloader').hide();
@@ -135,7 +187,7 @@ $(document).ready(function() {
 </script>
 <?php
 //for test period - not check session type
-//if($_SESSION['type'] == "carrier" || $_SESSION['type'] == "dispatch"):?>
+if($_SESSION['type'] == "carrier" || $_SESSION['type'] == "dispatch"):?>
 	<div class="js-dashboard-table">
 		<a class="button dashboard-button" data-goto="view">Go to map view</a>
 		<div class="title-div"></div>
@@ -165,10 +217,13 @@ $(document).ready(function() {
                 $cid = $row_tmp['carrier_id'];
             }
 			$res_tmp = mysql_qw($site->link, "
-				SELECT dm.first, dm.last, dr.eta, dr.pickup_time, dr.HoS, dr.bill_of_lading, dr.pre_schdeduled, dr.status, 'none(test)' as customer FROM driver_master dm
+				SELECT dm.first, dm.last, dr.eta, dr.pickup_time, dr.HoS, dr.bill_of_lading, dr.pre_schdeduled, dr.status, sm.shipper_name as customer FROM carrier_users dm
 				JOIN driver_route dr 
-					ON dr.driver_id = dm.driver_id
-				/*JOIN shipper_location -> shipper name via dr.shipper_location_id*/			
+					ON dr.driver_id = dm.id
+				JOIN shipper_locations sl 
+					ON sl.location_id = dr.shipper_location_id
+				JOIN shipper_master sm 
+					ON sm.shipper_id = sl.shipper_id		
 				WHERE dm.carrier_id = ?",
 				$cid) or die(mysqli_error($site->link));
 			$color = "white";
@@ -214,6 +269,12 @@ $(document).ready(function() {
 				<p class="label bold">Customer</p>
 				<select name="customer" class="customer">
 					<option value="all">All</option>
+					<?$res_tmp = mysql_qw($site->link, "
+						SELECT sm.shipper_name as customer, sm.shipper_id FROM shipper_master sm
+						") or die(mysqli_error($site->link));
+					while($row = mysqli_fetch_array($res_tmp)):?>
+					<option value="<?=$row['shipper_id']?>"><?=$row['customer']?></option>
+					<?endwhile?>
 				</select>
 				<br>
 				<div class="line"></div>
@@ -233,7 +294,10 @@ $(document).ready(function() {
 				<span id="HoSvalspan" class="smallspan">0hrs - 80hrs</span>
 				<div id="slider-HoS"></div>
 				<br>
-				<a class="button js-submit" style="display:inline-block;">Apply filter<p class="preloader"></p></a>
+				<div class="text-center posrel">
+					<a class="button js-submit" style="display:inline-block;">Apply filter</a>
+					<p class="preloader"></p>
+				</div>
 				<p class="error"></p>				
 			</form>
 		</div>
@@ -241,12 +305,12 @@ $(document).ready(function() {
 			<div id="map"></div>
 			<div class="summary">
 				<div class="title">Network Summary</div>
-				<p>Total trucks: 7</p>
-				<p>Total trucks: 7</p>
+				<div class="content">					
+				</div>				
 			</div>
 			<div class="clr"></div>
 		</div>
 	</div>	
-<?//endif?>
+<?endif?>
 
 <?include(INC_PATH."/templates/footer.php");?>

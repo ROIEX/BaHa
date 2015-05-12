@@ -19,6 +19,7 @@ $(document).ready(function() {
 	$('.js-form').submit(function(ev){
         $form = $(this);
         $form.find('.preloader').show();
+        $form.find('.js-sometext').show();
         $form.find('.js-block1 .terms-error').html("").hide();
         $('#confirmation').find('.js-conf-shipper').hide();
         $('#confirmation').find('.js-conf-carrier').hide();
@@ -30,6 +31,7 @@ $(document).ready(function() {
             dataType: 'json',
             success: function (data) {
             	$form.find('.preloader').hide();
+                $form.find('.js-sometext').hide();
             	$form.find('.js-block1').show();
                 $form.find('.js-block2').hide();
                 if(data.result == 'ok'){
@@ -141,8 +143,8 @@ $(document).ready(function() {
     });
 
     $('.js-terms').click(function(e){
-    	if($('.termsofuse').scrollTop()+300 != $('.termsofuse').prop("scrollHeight")){
-    		$(this).closest('.termmargin').find('.terms-error').show();
+    	if($('.termsofuse').scrollTop()+305 < $('.termsofuse').prop("scrollHeight")){
+            $(this).closest('.termmargin').find('.terms-error').show().html("You must scroll down and read through the terms and conditions before checking the box");
     		e.preventDefault();
     		return false;
     	}

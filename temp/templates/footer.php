@@ -315,8 +315,8 @@
                 </div>
                 <div class="text-center termmargin">
                     <input type="checkbox" class="js-terms" autocomplete="off">
-                    <span>I certify that i have read and accept the terms and conditions of this site</span>
-
+                    <span>I certify that i have read and accept the terms and conditions of this site</span><br>
+                    <span class="js-sometext displaynone">Verifying credentials with FMCSA.  This may take a few moments.</span>
                     <p class="terms-error">You must scroll down and read through the terms and conditions before
                         checking the box</p>
                 </div>
@@ -527,7 +527,8 @@
                 </div>
                 <div class="text-center termmargin">
                     <input type="checkbox" class="js-terms" autocomplete="off">
-                    <span>I certify that i have read and accept the terms and conditions of this site</span>
+                    <span>I certify that i have read and accept the terms and conditions of this site</span><br>
+                    <span class="js-sometext displaynone">Verifying credentials with FMCSA.  This may take a few moments.</span>
 
                     <p class="terms-error">You must scroll down and read through the terms and conditions before
                         checking the box</p>
@@ -728,7 +729,7 @@
                 </div>
                 <div class="text-center termmargin">
                     <input type="checkbox" class="js-terms" autocomplete="off">
-                    <span>I certify that i have read and accept the terms and conditions of this site</span>
+                    <span>I certify that i have read and accept the terms and conditions of this site</span>                    
 
                     <p class="terms-error">You must scroll down and read through the terms and conditions before
                         checking the box</p>
@@ -830,8 +831,7 @@
                 <p class="error"></p>
                 <input type="hidden" name="key" value="<?= $_GET['key'] ?>"/>
                 <input type="hidden" name="action" value="setuppasswd"/>
-                <input type="hidden" name="backurl" value="<?= SCRIPT_PATH_ROOT ?><?=($_GET['drv'] != 'Y')?'carrier_admin.php':''?>"/>
-                <?=($_GET['drv'] == 'Y')?'<input type="hidden" name="is_driver" value="Y"/>':''?>
+                <input type="hidden" name="backurl" value="<?= SCRIPT_PATH_ROOT ?><?=($_GET['is_driver'] != 'Y')?'carrier_admin.php':''?>"/>
                 <table>
                     <tr>
                         <td>password :</td>
