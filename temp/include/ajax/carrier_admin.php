@@ -71,9 +71,9 @@ if($_POST['action'] == 'add_users'){
 				}
 				elseif($_POST['type'][$key] == "driver"){
 					$message = "<html><body>";
-					$message .= "<p>Please accept invitation and set up your password.</p>
+					$message .= "<p>Please accept invitation.</p>
 					<p>Your username is ".$name."</p>
-					<a style='padding: 10px; background-color: #376092; text-decoration: none; font-size: 16px; font-weight: bold; color: #fff;' href='".SITE.SCRIPT_PATH_ROOT.'index.php?key='.$activation_code."&action=setuppasswd&is_driver=Y>Set my password</a><br><br>";				
+					<a style='padding: 10px; background-color: #376092; text-decoration: none; font-size: 16px; font-weight: bold; color: #fff;' href='".SITE.SCRIPT_PATH_ROOT.'registrationconfirm.php?key='.$activation_code."&is_driver=Y>Accept invitation</a><br><br>";				
 				}
 				//db ok - send mail
 				//send mail

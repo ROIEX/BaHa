@@ -1,0 +1,100 @@
+div.legend {
+    border: 1px solid #777;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+div.legend span {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+
+div.legend span.a {
+     background-color: green;
+}
+
+div.legend span.b {
+    background-color: #a50000;
+}
+
+div.legend span.c {
+    background-color: #999;
+}
+
+div.legend.dvir-status {
+
+}
+
+div.legend span.lightblue {
+    background-color: #4f81bc;
+}
+
+.chart-lightblue {
+    fill: #4f81bc;
+}
+
+div.legend span.darkgray {
+    background-color: #7f7f7f;
+}
+
+.chart-darkgray {
+    fill: #7f7f7f;
+}
+
+div.legend span.gray {
+    background-color: #a8a8a8;
+}
+
+.chart-gray {
+    fill: #a8a8a8;
+}
+
+div.legend span.darkblue {
+    background-color: #120072;
+}
+
+.chart-darkblue {
+    fill: #120072;
+}
+
+
+
+#driver-ratings.ct-chart .ct-series.ct-series-a .ct-bar {
+    stroke: #578dd7;
+}
+
+#driver-ratings.ct-chart .ct-series.ct-series-b .ct-bar {
+    stroke: #7f7f7f;
+}
+
+#driver-ratings.ct-chart .ct-series.ct-series-c .ct-bar {
+    stroke: #e46c0b;
+}
+
+.driver-ratings .legend span.a {
+    background-color: #578dd7;
+}
+
+.driver-ratings .legend span.b {
+    background-color: #7f7f7f;
+}
+
+.driver-ratings .legend span.c {
+    background-color: #e46c0b;
+}
+
+#driver-ratings.ct-chart .ct-label.ct-vertical {
+    font-size: 16px;
+    color: black;
+}
+
+.ct-chart .ct-label, .ct-chart .ct-label.ct-horizontal {
+    font-size: 1em;
+    text-align: center;
+}
+
+#on-time-percentage.ct-chart .ct-label, #on-time-percentage.ct-chart .ct-label.ct-horizontal {
+    fill: white;
+    font-size: 1em;
+}

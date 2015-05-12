@@ -44,11 +44,11 @@
                         </li>
                     <?else:?>
                         <li class="left"><a class="au_logo" href="<?=SITE.SCRIPT_PATH_ROOT?>"><img src="<?=SITE.SCRIPT_PATH_ROOT?>images/logo.png" width=60 height=27></a></li>
-                        <li class="left"><a href="#">Manage users</a></li>
+                        <li class="left"><a href="<?=SITE.SCRIPT_PATH_ROOT?>carrier_admin.php">Manage users</a></li>
                         <li class="left"><a href="#">Account info</a></li>
 
-                        <li><a href="#">Summary</a></li>
-                        <li><a href="drivers.php">Drivers</a></li>
+                        <li><a href="<?=SITE.SCRIPT_PATH_ROOT?>dashboard/">Summary</a></li>
+                        <li><a href="<?=SITE.SCRIPT_PATH_ROOT?>drivers.php">Drivers</a></li>
                         <li><a href="#">HoS</a></li>
                         <li><a href="#">DVIR</a></li>
                         <li><a href="#">Loads</a></li>
@@ -58,7 +58,7 @@
                             <a href="#"><?=$_SESSION['email']?></a>
                         </li>
                         <li>
-                            <a href="logout.php">logout</a>
+                            <a href="<?=SITE.SCRIPT_PATH_ROOT?>logout.php">logout</a>
                         </li>
                     <?endif?>                
                 </ul>

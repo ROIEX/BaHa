@@ -328,8 +328,28 @@ class Site{
 		die();
 	}
 
-	public function registrate($key){
+	public function registrate($key, $is_driver = false){
 		//search inactive record with same hash
+		//if it's a driver - it hase separate logic
+		if($is_driver == "Y"){
+			$res = mysql_qw($this->link, "
+				SELECT id, email, usertype FROM carrier_users WHERE activation_code = ? AND status != 'active'
+			", $key) or die(mysqli_error($this->link));
+			$row = mysqli_fetch_array($res);
+			if($row['id']){
+				mysql_qw($this->link, "
+					UPDATE carrier_users SET status = 'active', last_session = ? WHERE id = ?",
+					date('m/d/Y'), $row['id']
+				);// or die(mysql_error());
+				Site::redirect(SCRIPT_PATH_ROOT);
+			}
+			else{
+				echo "User not found";
+			}
+			return;
+		}
+
+		//may be it's a carrier or free driver
 		$res = mysql_qw($this->link, "
 			SELECT carrier_id, type, email FROM carrier_master WHERE is_active = 'N' AND activation_code = ?
 		", $key);

@@ -1,0 +1,40 @@
+[26-Apr-2015 02:54:52 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/trademark/public_html/dashboard/db.php:12
+Stack trace:
+#0 /home/trademark/public_html/dashboard/db.php(12): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /home/trademark/public_html/dashboard/index.php(4): DB->__construct()
+#2 {main}
+  thrown in /home/trademark/public_html/dashboard/db.php on line 12
+[26-Apr-2015 02:56:38 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 156
+[26-Apr-2015 04:13:34 America/Chicago] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/trademark/public_html/dashboard/db.php on line 84
+[04-May-2015 14:41:15 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 169
+[04-May-2015 23:48:54 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 169
+[05-May-2015 01:35:43 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 169
+[05-May-2015 01:36:38 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 169
+[05-May-2015 01:37:44 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 169
+[06-May-2015 11:24:21 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 169
+[06-May-2015 11:24:32 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 169
+[06-May-2015 17:18:53 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 169
+[06-May-2015 18:08:53 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 169
+[06-May-2015 23:54:26 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 169
+[06-May-2015 23:55:40 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 169
+[06-May-2015 23:55:44 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 169
+[06-May-2015 23:56:33 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 169
+[08-May-2015 14:06:03 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/db.php on line 52
+[08-May-2015 14:06:03 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/db.php on line 78
+[08-May-2015 14:06:04 America/Chicago] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/trademark/public_html/dashboard/db.php on line 129
+[08-May-2015 14:08:44 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/db.php on line 78
+[08-May-2015 14:08:44 America/Chicago] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/trademark/public_html/dashboard/db.php on line 129
+[08-May-2015 14:10:58 America/Chicago] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/trademark/public_html/dashboard/db.php on line 129
+[08-May-2015 14:15:57 America/Chicago] PHP Fatal error:  Call to undefined method DB::getDvirStatusTotals() in /home/trademark/public_html/dashboard/index.php on line 7
+[08-May-2015 14:17:54 America/Chicago] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/trademark/public_html/dashboard/db.php on line 147
+[08-May-2015 14:17:57 America/Chicago] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/trademark/public_html/dashboard/db.php on line 147
+[08-May-2015 14:18:43 America/Chicago] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/trademark/public_html/dashboard/db.php on line 164
+[08-May-2015 14:20:17 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 168
+[08-May-2015 14:20:17 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 206
+[08-May-2015 14:21:36 America/Chicago] PHP Parse error:  syntax error, unexpected ''</td>' (T_ENCAPSED_AND_WHITESPACE) in /home/trademark/public_html/dashboard/index.php on line 174
+[08-May-2015 14:21:39 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 168
+[08-May-2015 14:21:39 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 206
+[08-May-2015 14:23:09 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 168
+[08-May-2015 14:23:09 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 206
+[08-May-2015 14:24:33 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 168
+[08-May-2015 14:26:13 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/trademark/public_html/dashboard/index.php on line 168
