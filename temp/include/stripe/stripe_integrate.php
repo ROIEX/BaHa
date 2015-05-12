@@ -45,7 +45,7 @@ class carrier_stripe {
 								$result = FALSE;
 								//new stripe_id		
 								$carrier_stripe_id = self::new_carrier($site_obj, $carrier_id);
-								self::payment_info($site_obj, $carrier_id, $trial_date_end);
+								self::payment_info($site_obj, $carrier_id, $carrier_stripe_id, $trial_date_end);
 							}	
 							
 							//Analize date trial
