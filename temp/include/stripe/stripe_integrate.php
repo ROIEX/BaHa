@@ -426,7 +426,7 @@ class carrier_general {
 			
 			if ($_SESSION['type'] == "carrier") {
 				$trial_date_end = FALSE;
-				$carrier_result = self::payment_info($site_obj, $carrier_id, $carrier_stripe_id, $trial_date_end);
+				$carrier_result = carrier_stripe::payment_info($site_obj, $carrier_id, $carrier_stripe_id, $trial_date_end);
 				
 				//Analize date trial
 				$sys_date = time();

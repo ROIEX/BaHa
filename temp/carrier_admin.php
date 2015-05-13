@@ -3,7 +3,7 @@ include(dirname(__FILE__)."/include/initializer.php");
 	
 	//control of payment and free trial
 	if (!carrier_stripe::control_payment($site, $_SESSION['uid'])) {
-		Site::redirect(SCRIPT_PATH_ROOT."/trial_and.php");	
+		Site::redirect(SCRIPT_PATH_ROOT."trial_and.php");	
 	}
 			
 $shortHeader = "Y";
@@ -21,16 +21,17 @@ if($_SESSION['type'] == "carrier" || $_SESSION['type'] == "dispatch"):?>
             <?if($_SESSION['type'] == "carrier"):?>
 				<?php
 				 //countdown - free trial
-				  $countdown_day = -1:
+				  $countdown_day = -1;
 				  if (carrier_general::trial_countdown($site, $_SESSION['uid'], $countdown_day)) {	
-						echo '<div>Free Trial. ';
+						echo '<div><strong>Free Trial. ';
 						if ($countdown_day > 0) {
 							echo $countdown_day.' days left.';
 						}
 						else {
 							echo 'Less than one day.';
 						}
-						echo '</div>';
+						echo '</strong></div>';
+						echo '<br/>';
 				  }				  
 				?>
                 <div class="blueline-container">
