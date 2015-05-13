@@ -418,7 +418,33 @@ class carrier_general {
 					$res = mysql_qw($site_obj->link, "delete FROM carrier_users WHERE id = ? AND carrier_id = ?", $user_id, $carrier_id);
 					  
 			return $result;
-		}		
+		}
+		
+		public static function trial_countdown(&$site_obj, $carrier_id, &$countdown_day = -1) {
+		//countdown - free trial
+			$result = FALSE;
+			
+			if ($_SESSION['type'] == "carrier") {
+				$trial_date_end = FALSE;
+				$carrier_result = self::payment_info($site_obj, $carrier_id, $carrier_stripe_id, $trial_date_end);
+				
+				//Analize date trial
+				$sys_date = time();
+				$trial_date_end = strtotime($trial_date_end);
+				if ($sys_date < $trial_date_end) {
+				//Trial period
+					$result = TRUE;
+					$period_datatime = $trial_date_end - $sys_date;
+					$countdown_day = round($period_datatime /  86400);														
+				}
+				else {
+				//The end Trial	
+					$result = FALSE;				
+				}
+			}			
+			
+			return $result;
+		}
 }	
 	
 	

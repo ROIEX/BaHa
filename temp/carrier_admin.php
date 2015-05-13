@@ -19,6 +19,20 @@ if($_SESSION['type'] == "carrier" || $_SESSION['type'] == "dispatch"):?>
         <?php endif?>
         <div class="admin_right <?=($_SESSION['type'] == "dispatch")?' admin_right2':''?>">
             <?if($_SESSION['type'] == "carrier"):?>
+				<?php
+				 //countdown - free trial
+				  $countdown_day = -1:
+				  if (carrier_general::trial_countdown($site, $_SESSION['uid'], $countdown_day)) {	
+						echo '<div>Free Trial. ';
+						if ($countdown_day > 0) {
+							echo $countdown_day.' days left.';
+						}
+						else {
+							echo 'Less than one day.';
+						}
+						echo '</div>';
+				  }				  
+				?>
                 <div class="blueline-container">
                     <span class="title1">Create new users</span>
                     <form id="car_add" method="POST" action="<?=SCRIPT_PATH_ROOT?>include/ajax/carrier_admin.php" autocomplete="off">
